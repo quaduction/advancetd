@@ -1,4 +1,3 @@
-# class_name SceneRegistry; # Autoload conflict
 extends Node;
 
 var sceneBuckets: Dictionary[String, Array] = {};
@@ -12,11 +11,15 @@ func getBucket(bucketName: String) -> Array:
     else:
         return [];
 
+#
+# Move nodes in/out of buckets
+#
 
 func freeBucket(bucketName: String):
     if sceneBuckets.has(bucketName):
         for node in sceneBuckets[bucketName]:
             node.free();
+        sceneBuckets.erase(bucketName);
 
 func addToBucket(bucketName: String, node: Node) -> Node:
     if !sceneBuckets.has(bucketName):
@@ -36,13 +39,43 @@ func bucketAttachInstance(bucketName: String, parent: Node, instanceSoup):
     addToBucket(bucketName, node);
     parent.add_child(node);
 
+#
+# Pausing/resuming buckets
+#
 
 func setBucketProcessing(bucketName: String, enabled: bool):
     for node in getBucket(bucketName):
-        node.process_mode = ProcessMode.PROCESS_MODE_INHERIT if enabled else ProcessMode.PROCESS_MODE_DISABLED;
+        setNodeProcessing(node, enabled);
 
 func suspendBucket(bucketName: String):
     return setBucketProcessing(bucketName, false);
 
 func resumeBucket(bucketName: String):
     return setBucketProcessing(bucketName, true);
+
+# Final boss of pausing: unparenting them all
+func detachBucket(bucketName: String):
+    for node in getBucket(bucketName):
+        unparentNode(node);
+
+
+#
+# Utils
+#
+
+# Setting processing and pausing
+
+func setNodeProcessing(node: Node, enabled: bool):
+    node.process_mode = ProcessMode.PROCESS_MODE_INHERIT if enabled else ProcessMode.PROCESS_MODE_DISABLED;
+
+func pauseNode(node):
+    setNodeProcessing(node, false);
+
+func unpauseNode(node):
+    setNodeProcessing(node, true);
+
+# Unparenting
+func unparentNode(node):
+    var parent_node = node.get_parent();
+    if parent_node != null:
+        parent_node.remove_child(node);

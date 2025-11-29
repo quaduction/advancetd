@@ -16,7 +16,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-SceneRegistry="*res://resources/scene_registry.gd"
+SceneManager="*res://core/SceneManager/scene_manager.gd"
 
 [rendering]
 
