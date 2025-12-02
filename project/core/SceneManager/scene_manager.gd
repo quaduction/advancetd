@@ -1,5 +1,3 @@
-extends Node;
-
 var sceneBuckets: Dictionary[String, Array] = {};
 
 func hasBucket(bucketName: String) -> bool:
@@ -30,11 +28,7 @@ func addToBucket(bucketName: String, node: Node) -> Node:
     return node;
 
 func bucketAttachInstance(bucketName: String, parent: Node, instanceSoup):
-    var node: Node;
-    match typeof(instanceSoup):
-        "Node": node = instanceSoup;
-        "PackedScene": node = instanceSoup.instance();
-        "String": node = load(instanceSoup).instance();
+    var node := newNodeFromSoup(instanceSoup);
 
     addToBucket(bucketName, node);
     parent.add_child(node);
@@ -65,8 +59,16 @@ func detachBucket(bucketName: String):
 
 # Setting processing and pausing
 
+func newNodeFromSoup(soup) -> Node:
+    var node: Node;
+    match type_string(typeof(soup)):
+        "Node": node = soup;
+        "PackedScene": node = soup.instance();
+        "String": node = load(soup).instance();
+    return node;
+
 func setNodeProcessing(node: Node, enabled: bool):
-    node.process_mode = ProcessMode.PROCESS_MODE_INHERIT if enabled else ProcessMode.PROCESS_MODE_DISABLED;
+    node.process_mode = Node.PROCESS_MODE_INHERIT if enabled else Node.PROCESS_MODE_DISABLED;
 
 func pauseNode(node):
     setNodeProcessing(node, false);
