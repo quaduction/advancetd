@@ -33,6 +33,8 @@ func bucketAttachInstance(bucketName: String, parent: Node, instanceSoup):
     addToBucket(bucketName, node);
     parent.add_child(node);
 
+    return node;
+
 #
 # Pausing/resuming buckets
 #
