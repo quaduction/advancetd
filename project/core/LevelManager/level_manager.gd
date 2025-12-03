@@ -5,10 +5,11 @@ signal levelUnloaded(levelNode: Node);
 
 var currentLevel: Node;
 
-func load(levelInstanceSoup):
-    pass;
+func load(levelSoup):
+    currentLevel = SceneManager.bucketAttachInstance("activeLevel", self, levelSoup);
+    levelLoaded.emit(currentLevel);
 
 func unload():
     if type_string(typeof(currentLevel)) == "Node":
         levelUnloaded.emit(currentLevel);
-        currentLevel.queue_free();
+        SceneManager.freeBucket("activeLevel");
