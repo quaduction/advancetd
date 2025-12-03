@@ -7,6 +7,6 @@
 [node name="Main" type="Node"]
 script = ExtResource("1_4o8at")
 
-[node name="MenuManager" parent="." instance=ExtResource("1_i3380")]
-
 [node name="LevelManager" parent="." instance=ExtResource("3_kyyci")]
+
+[node name="MenuManager" parent="." instance=ExtResource("1_i3380")]
