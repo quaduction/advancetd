@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=3 uid="uid://bysicf1758xei"]
+
+[ext_resource type="Texture2D" uid="uid://dbv0xi30bfdsm" path="res://UI/settingsScreen/assets/background.png" id="1_7ncl2"]
+[ext_resource type="Texture2D" uid="uid://b2yppsybmku8t" path="res://common/assets/textures/rectangle.png" id="2_a5gc7"]
+[ext_resource type="Texture2D" uid="uid://ruyhc0gb3c8t" path="res://UI/titleScreen/assets/title.png" id="2_mbfur"]
+[ext_resource type="Script" uid="uid://d3357o3prrjrf" path="res://UI/settingsScreen/assets/masterAudioSlider.gd" id="3_3dt3i"]
+[ext_resource type="Script" uid="uid://du8alxm7siyh2" path="res://UI/settingsScreen/musicAudioSlider.gd" id="4_0nn01"]
+[ext_resource type="Theme" uid="uid://dvuu2bpdvg5sk" path="res://common/theme.tres" id="4_nawmw"]
+[ext_resource type="Script" uid="uid://ciwny5heehxta" path="res://UI/settingsScreen/SfxAudioSlider.gd" id="5_0nn01"]
+
+[node name="SettingsScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -3.0
+offset_right = 1163.0
+offset_bottom = 659.0
+texture = ExtResource("1_7ncl2")
+expand_mode = 2
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 333.0
+offset_top = 79.0
+offset_right = 827.0
+offset_bottom = 139.0
+texture = ExtResource("2_mbfur")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 204.0
+offset_right = 548.0
+offset_bottom = 606.0
+texture = ExtResource("2_a5gc7")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 238.0
+offset_right = 446.0
+offset_bottom = 456.0
+theme_override_constants/separation = 16
+
+[node name="GVLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_nawmw")
+text = "Global Volume"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="MasterVolumeSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_3dt3i")
+bus_name = "Master"
+
+[node name="MVLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_nawmw")
+text = "Music Volume"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="MusicVolumeSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("4_0nn01")
+bus_name = "Music"
+
+[node name="SVLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_nawmw")
+text = "Gameplay Volume"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="SfxVolumeSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("5_0nn01")
+bus_name = "Sfx"
