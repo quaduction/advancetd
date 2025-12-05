@@ -13,7 +13,14 @@ config_version=5
 config/name="advancetd"
 run/main_scene="uid://b0c3hvucc3ndc"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://common/default_bus_layout.tres"
 
 [autoload]
 
@@ -21,7 +28,14 @@ SceneManager="*res://core/SceneManager/scene_manager.gd"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://common/assets/lang/lang.po")
+locale/translations_pot_files=PackedStringArray("res://UI/loadoutScreen/loadoutScreen.tscn", "res://UI/settingsScreen/settingsScreen.tscn", "res://UI/titleScreen/titleScreen.tscn")
 
 [rendering]
 
