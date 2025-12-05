@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://48xk0rjvlrb7"]
 
-[ext_resource type="Texture2D" uid="uid://d1rrkdtesas7u" path="res://UI/Common/assets/textures/button.png" id="1_mfhu3"]
+[ext_resource type="Texture2D" uid="uid://cjtlnvnh0lunm" path="res://common/assets/textures/button.png" id="1_mfhu3"]
 [ext_resource type="Texture2D" uid="uid://cy2kr8vo8kmij" path="res://UI/TitleScreen/assets/background.png" id="2_72tbe"]
-[ext_resource type="Texture2D" uid="uid://d2nfhkqwybxma" path="res://UI/Common/assets/textures/buttonclick.png" id="3_e8n7d"]
-[ext_resource type="FontFile" uid="uid://sxpenkjk1rcb" path="res://UI/Common/fonts/PixelifySans-VariableFont_wght.ttf" id="3_x3en0"]
-[ext_resource type="Texture2D" uid="uid://bk2e41cfg438f" path="res://UI/Common/assets/textures/buttonhover.png" id="4_ct6nt"]
+[ext_resource type="Texture2D" uid="uid://b3qfst3uirwau" path="res://common/assets/textures/buttonclick.png" id="3_e8n7d"]
+[ext_resource type="FontFile" uid="uid://ddojiyaaeaubi" path="res://common/assets/fonts/PixelifySans-VariableFont_wght.ttf" id="3_x3en0"]
+[ext_resource type="Texture2D" uid="uid://cx5y11wiid0my" path="res://common/assets/textures/buttonhover.png" id="4_ct6nt"]
 [ext_resource type="Texture2D" uid="uid://bhacmset70s2e" path="res://UI/TitleScreen/assets/title.png" id="4_kesnn"]
 
 [node name="TitleScreen" type="Control"]
