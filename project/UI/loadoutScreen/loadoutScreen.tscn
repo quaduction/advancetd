@@ -857,9 +857,9 @@ offset_bottom = 83.0
 [node name="Terminal" type="TextureRect" parent="."]
 clip_contents = true
 layout_mode = 0
-offset_left = 1303.0
+offset_left = 1249.0
 offset_top = 901.0
-offset_right = 1791.0
+offset_right = 1842.0
 offset_bottom = 1038.0
 texture = ExtResource("2_nayel")
 expand_mode = 1
