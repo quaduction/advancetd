@@ -1,3 +1,5 @@
+extends Node;
+
 var sceneBuckets: Dictionary[String, Array] = {};
 
 func hasBucket(bucketName: String) -> bool:
