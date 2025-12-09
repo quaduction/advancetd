@@ -59,8 +59,6 @@ func detachBucket(bucketName: String):
 # Utils
 #
 
-# Setting processing and pausing
-
 func newNodeFromSoup(soup) -> Node:
     var node: Node;
     match type_string(typeof(soup)):
@@ -69,6 +67,7 @@ func newNodeFromSoup(soup) -> Node:
         "String": node = load(soup).instance();
     return node;
 
+# Setting processing and pausing
 func setNodeProcessing(node: Node, enabled: bool):
     node.process_mode = Node.PROCESS_MODE_INHERIT if enabled else Node.PROCESS_MODE_DISABLED;
 
