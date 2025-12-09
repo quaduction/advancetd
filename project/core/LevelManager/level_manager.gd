@@ -1,4 +1,4 @@
-extends Node2D
+extends Node2D;
 
 signal levelLoaded(levelNode: Node);
 signal levelUnloaded(levelNode: Node);
