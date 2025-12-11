@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx5y11wiid0my"
-path="res://.godot/imported/buttonhover.png-af533a03d43026701e10b9cd4e47dddc.ctex"
+uid="uid://ifxvni87m475"
+path="res://.godot/imported/towers-decal.png-df8ef36cc8a23c5deaea16ec072b0626.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://common/assets/textures/buttonhover.png"
-dest_files=["res://.godot/imported/buttonhover.png-af533a03d43026701e10b9cd4e47dddc.ctex"]
+source_file="res://common/assets/textures/sprites/towers/towers-decal.png"
+dest_files=["res://.godot/imported/towers-decal.png-df8ef36cc8a23c5deaea16ec072b0626.ctex"]
 
 [params]
 

@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://bvc5gp3nka7re"]
 
-[ext_resource type="Texture2D" uid="uid://cagocema6d7e2" path="res://UI/loadoutScreen/assets/background.png" id="1_g44nd"]
-[ext_resource type="Texture2D" uid="uid://b2yppsybmku8t" path="res://common/assets/textures/rectangle.png" id="2_nayel"]
-[ext_resource type="Texture2D" uid="uid://wertniriia2q" path="res://UI/loadoutScreen/assets/loadoutSelection.png" id="3_xvwby"]
+[ext_resource type="Texture2D" uid="uid://cagocema6d7e2" path="res://ui/loadoutScreen/assets/background.png" id="1_g44nd"]
+[ext_resource type="Texture2D" uid="uid://b2yppsybmku8t" path="res://common/assets/textures/ui/rectangle.png" id="2_nayel"]
+[ext_resource type="Texture2D" uid="uid://wertniriia2q" path="res://ui/loadoutScreen/assets/loadoutSelection.png" id="3_xvwby"]
 [ext_resource type="Theme" uid="uid://dvuu2bpdvg5sk" path="res://common/theme.tres" id="4_fkehm"]
 [ext_resource type="FontFile" uid="uid://ddojiyaaeaubi" path="res://common/assets/fonts/PixelifySans-VariableFont_wght.ttf" id="5_4ajb7"]
-[ext_resource type="Texture2D" uid="uid://ceb65qoeqkxcv" path="res://UI/loadoutScreen/assets/towercontainer.png" id="6_4ajb7"]
+[ext_resource type="Texture2D" uid="uid://ceb65qoeqkxcv" path="res://ui/loadoutScreen/assets/towercontainer.png" id="6_4ajb7"]
 
 [node name="LoadoutScreen" type="Control"]
 layout_mode = 3
