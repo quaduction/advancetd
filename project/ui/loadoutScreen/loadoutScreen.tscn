@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvc5gp3nka7re"]
+[gd_scene load_steps=8 format=3 uid="uid://bvc5gp3nka7re"]
 
 [ext_resource type="Texture2D" uid="uid://cagocema6d7e2" path="res://ui/loadoutScreen/assets/background.png" id="1_g44nd"]
+[ext_resource type="Script" uid="uid://c1b6ui8pg5bgu" path="res://ui/loadoutScreen/loadout_screen.gd" id="1_tn1ga"]
 [ext_resource type="Texture2D" uid="uid://b2yppsybmku8t" path="res://common/assets/textures/ui/rectangle.png" id="2_nayel"]
 [ext_resource type="Texture2D" uid="uid://wertniriia2q" path="res://ui/loadoutScreen/assets/loadoutSelection.png" id="3_xvwby"]
 [ext_resource type="Theme" uid="uid://dvuu2bpdvg5sk" path="res://common/theme.tres" id="4_fkehm"]
@@ -14,35 +15,36 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tn1ga")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = -4.0
 offset_top = -3.0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_right = 1275.0
+offset_bottom = 712.0
 texture = ExtResource("1_g44nd")
 expand_mode = 2
 
 [node name="TowerSlots" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 47.0
-offset_right = 657.0
-offset_bottom = 1026.0
+offset_left = 46.0
+offset_top = 39.0
+offset_right = 474.0
+offset_bottom = 681.0
 texture = ExtResource("2_nayel")
 expand_mode = 1
 
 [node name="TowerContainer" type="VBoxContainer" parent="TowerSlots"]
 layout_mode = 0
-offset_left = 80.0
-offset_top = 84.0
-offset_right = 521.0
-offset_bottom = 914.0
+offset_left = -11.0
+offset_top = 38.0
+offset_right = 430.0
+offset_bottom = 868.0
 theme_override_constants/separation = 16
 
 [node name="Slot1" type="TextureRect" parent="TowerSlots/TowerContainer"]
-custom_minimum_size = Vector2(0, 125)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 texture = ExtResource("3_xvwby")
 expand_mode = 1
@@ -74,7 +76,7 @@ offset_right = 132.0
 offset_bottom = 69.0
 
 [node name="Slot2" type="TextureRect" parent="TowerSlots/TowerContainer"]
-custom_minimum_size = Vector2(0, 125)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 texture = ExtResource("3_xvwby")
 expand_mode = 1
@@ -106,7 +108,7 @@ offset_right = 132.0
 offset_bottom = 69.0
 
 [node name="Slot3" type="TextureRect" parent="TowerSlots/TowerContainer"]
-custom_minimum_size = Vector2(0, 125)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 texture = ExtResource("3_xvwby")
 expand_mode = 1
@@ -138,7 +140,7 @@ offset_right = 132.0
 offset_bottom = 69.0
 
 [node name="Slot4" type="TextureRect" parent="TowerSlots/TowerContainer"]
-custom_minimum_size = Vector2(0, 125)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 texture = ExtResource("3_xvwby")
 expand_mode = 1
@@ -170,7 +172,7 @@ offset_right = 132.0
 offset_bottom = 69.0
 
 [node name="Slot5" type="TextureRect" parent="TowerSlots/TowerContainer"]
-custom_minimum_size = Vector2(0, 125)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 texture = ExtResource("3_xvwby")
 expand_mode = 1
@@ -202,7 +204,7 @@ offset_right = 132.0
 offset_bottom = 69.0
 
 [node name="Slot6" type="TextureRect" parent="TowerSlots/TowerContainer"]
-custom_minimum_size = Vector2(0, 125)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 texture = ExtResource("3_xvwby")
 expand_mode = 1
@@ -235,37 +237,37 @@ offset_bottom = 69.0
 
 [node name="Shop" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 1249.0
-offset_top = 47.0
-offset_right = 1835.0
-offset_bottom = 885.0
+offset_left = 798.0
+offset_top = 20.0
+offset_right = 1219.0
+offset_bottom = 528.0
 texture = ExtResource("2_nayel")
 expand_mode = 1
 
 [node name="ShopContainer" type="VBoxContainer" parent="Shop"]
 layout_mode = 0
-offset_left = 35.0
-offset_top = 54.0
-offset_right = 553.0
-offset_bottom = 814.0
+offset_left = 31.0
+offset_top = 18.0
+offset_right = 399.0
+offset_bottom = 613.0
 theme_override_constants/separation = 20
 
 [node name="Row1" type="HBoxContainer" parent="Shop/ShopContainer"]
-custom_minimum_size = Vector2(0, 175)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
 [node name="Slot1" type="TextureRect" parent="Shop/ShopContainer/Row1"]
-custom_minimum_size = Vector2(170, 0)
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
 expand_mode = 1
 
 [node name="TowerLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row1/Slot1"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 2.0
-offset_right = 123.0
-offset_bottom = 30.0
+offset_left = 22.0
+offset_top = -2.0
+offset_right = 98.0
+offset_bottom = 26.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -273,17 +275,17 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/normal_font_size = 16
 text = "Tower"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="PriceLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row1/Slot1"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 131.0
-offset_right = 123.0
-offset_bottom = 161.0
+offset_left = 22.0
+offset_top = 73.0
+offset_right = 98.0
+offset_bottom = 103.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -291,30 +293,30 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 16
 text = "Price"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="TowerIcon" type="TextureRect" parent="Shop/ShopContainer/Row1/Slot1"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 28.0
-offset_right = 91.0
-offset_bottom = 83.0
+offset_left = 34.0
+offset_top = 19.0
+offset_right = 86.0
+offset_bottom = 70.0
 
 [node name="Slot2" type="TextureRect" parent="Shop/ShopContainer/Row1"]
-custom_minimum_size = Vector2(170, 0)
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
 expand_mode = 1
 
 [node name="TowerLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row1/Slot2"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 2.0
-offset_right = 123.0
-offset_bottom = 30.0
+offset_left = 22.0
+offset_top = -2.0
+offset_right = 98.0
+offset_bottom = 26.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -322,17 +324,17 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/normal_font_size = 16
 text = "Tower"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="PriceLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row1/Slot2"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 131.0
-offset_right = 123.0
-offset_bottom = 161.0
+offset_left = 22.0
+offset_top = 73.0
+offset_right = 98.0
+offset_bottom = 103.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -340,30 +342,30 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 16
 text = "Price"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="TowerIcon" type="TextureRect" parent="Shop/ShopContainer/Row1/Slot2"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 28.0
-offset_right = 91.0
-offset_bottom = 83.0
+offset_left = 34.0
+offset_top = 19.0
+offset_right = 86.0
+offset_bottom = 70.0
 
 [node name="Slot3" type="TextureRect" parent="Shop/ShopContainer/Row1"]
-custom_minimum_size = Vector2(170, 0)
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
 expand_mode = 1
 
 [node name="TowerLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row1/Slot3"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 2.0
-offset_right = 123.0
-offset_bottom = 30.0
+offset_left = 22.0
+offset_top = -2.0
+offset_right = 98.0
+offset_bottom = 26.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -371,17 +373,17 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/normal_font_size = 16
 text = "Tower"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="PriceLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row1/Slot3"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 131.0
-offset_right = 123.0
-offset_bottom = 161.0
+offset_left = 22.0
+offset_top = 73.0
+offset_right = 98.0
+offset_bottom = 103.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -389,34 +391,34 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 16
 text = "Price"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="TowerIcon" type="TextureRect" parent="Shop/ShopContainer/Row1/Slot3"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 28.0
-offset_right = 91.0
-offset_bottom = 83.0
+offset_left = 34.0
+offset_top = 19.0
+offset_right = 86.0
+offset_bottom = 70.0
 
 [node name="Row2" type="HBoxContainer" parent="Shop/ShopContainer"]
-custom_minimum_size = Vector2(0, 175)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
 [node name="Slot1" type="TextureRect" parent="Shop/ShopContainer/Row2"]
-custom_minimum_size = Vector2(170, 0)
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
 expand_mode = 1
 
 [node name="TowerLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row2/Slot1"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 2.0
-offset_right = 123.0
-offset_bottom = 30.0
+offset_left = 22.0
+offset_top = -2.0
+offset_right = 98.0
+offset_bottom = 26.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -424,17 +426,17 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/normal_font_size = 16
 text = "Tower"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="PriceLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row2/Slot1"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 131.0
-offset_right = 123.0
-offset_bottom = 161.0
+offset_left = 22.0
+offset_top = 73.0
+offset_right = 98.0
+offset_bottom = 103.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -442,30 +444,30 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 16
 text = "Price"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="TowerIcon" type="TextureRect" parent="Shop/ShopContainer/Row2/Slot1"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 28.0
-offset_right = 91.0
-offset_bottom = 83.0
+offset_left = 34.0
+offset_top = 19.0
+offset_right = 86.0
+offset_bottom = 70.0
 
 [node name="Slot2" type="TextureRect" parent="Shop/ShopContainer/Row2"]
-custom_minimum_size = Vector2(170, 0)
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
 expand_mode = 1
 
 [node name="TowerLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row2/Slot2"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 2.0
-offset_right = 123.0
-offset_bottom = 30.0
+offset_left = 22.0
+offset_top = -2.0
+offset_right = 98.0
+offset_bottom = 26.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -473,17 +475,17 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/normal_font_size = 16
 text = "Tower"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="PriceLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row2/Slot2"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 131.0
-offset_right = 123.0
-offset_bottom = 161.0
+offset_left = 22.0
+offset_top = 73.0
+offset_right = 98.0
+offset_bottom = 103.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -491,30 +493,30 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 16
 text = "Price"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="TowerIcon" type="TextureRect" parent="Shop/ShopContainer/Row2/Slot2"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 28.0
-offset_right = 91.0
-offset_bottom = 83.0
+offset_left = 34.0
+offset_top = 19.0
+offset_right = 86.0
+offset_bottom = 70.0
 
 [node name="Slot3" type="TextureRect" parent="Shop/ShopContainer/Row2"]
-custom_minimum_size = Vector2(170, 0)
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
 expand_mode = 1
 
 [node name="TowerLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row2/Slot3"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 2.0
-offset_right = 123.0
-offset_bottom = 30.0
+offset_left = 22.0
+offset_top = -2.0
+offset_right = 98.0
+offset_bottom = 26.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -522,17 +524,17 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/normal_font_size = 16
 text = "Tower"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="PriceLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row2/Slot3"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 131.0
-offset_right = 123.0
-offset_bottom = 161.0
+offset_left = 22.0
+offset_top = 73.0
+offset_right = 98.0
+offset_bottom = 103.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -540,34 +542,34 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 16
 text = "Price"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="TowerIcon" type="TextureRect" parent="Shop/ShopContainer/Row2/Slot3"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 28.0
-offset_right = 91.0
-offset_bottom = 83.0
+offset_left = 34.0
+offset_top = 19.0
+offset_right = 86.0
+offset_bottom = 70.0
 
 [node name="Row3" type="HBoxContainer" parent="Shop/ShopContainer"]
-custom_minimum_size = Vector2(0, 175)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
 [node name="Slot1" type="TextureRect" parent="Shop/ShopContainer/Row3"]
-custom_minimum_size = Vector2(170, 0)
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
 expand_mode = 1
 
 [node name="TowerLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row3/Slot1"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 2.0
-offset_right = 123.0
-offset_bottom = 30.0
+offset_left = 22.0
+offset_top = -2.0
+offset_right = 98.0
+offset_bottom = 26.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -575,17 +577,17 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/normal_font_size = 16
 text = "Tower"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="PriceLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row3/Slot1"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 131.0
-offset_right = 123.0
-offset_bottom = 161.0
+offset_left = 22.0
+offset_top = 73.0
+offset_right = 98.0
+offset_bottom = 103.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -593,30 +595,30 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 16
 text = "Price"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="TowerIcon" type="TextureRect" parent="Shop/ShopContainer/Row3/Slot1"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 28.0
-offset_right = 91.0
-offset_bottom = 83.0
+offset_left = 34.0
+offset_top = 19.0
+offset_right = 86.0
+offset_bottom = 70.0
 
 [node name="Slot2" type="TextureRect" parent="Shop/ShopContainer/Row3"]
-custom_minimum_size = Vector2(170, 0)
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
 expand_mode = 1
 
 [node name="TowerLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row3/Slot2"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 2.0
-offset_right = 123.0
-offset_bottom = 30.0
+offset_left = 22.0
+offset_top = -2.0
+offset_right = 98.0
+offset_bottom = 26.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -624,17 +626,17 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/normal_font_size = 16
 text = "Tower"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="PriceLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row3/Slot2"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 131.0
-offset_right = 123.0
-offset_bottom = 161.0
+offset_left = 22.0
+offset_top = 73.0
+offset_right = 98.0
+offset_bottom = 103.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -642,30 +644,30 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 16
 text = "Price"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="TowerIcon" type="TextureRect" parent="Shop/ShopContainer/Row3/Slot2"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 28.0
-offset_right = 91.0
-offset_bottom = 83.0
+offset_left = 34.0
+offset_top = 19.0
+offset_right = 86.0
+offset_bottom = 70.0
 
 [node name="Slot3" type="TextureRect" parent="Shop/ShopContainer/Row3"]
-custom_minimum_size = Vector2(170, 0)
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
 expand_mode = 1
 
 [node name="TowerLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row3/Slot3"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 2.0
-offset_right = 123.0
-offset_bottom = 30.0
+offset_left = 22.0
+offset_top = -2.0
+offset_right = 98.0
+offset_bottom = 26.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -673,17 +675,17 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/normal_font_size = 16
 text = "Tower"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="PriceLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row3/Slot3"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 131.0
-offset_right = 123.0
-offset_bottom = 161.0
+offset_left = 22.0
+offset_top = 73.0
+offset_right = 98.0
+offset_bottom = 103.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -691,34 +693,34 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 16
 text = "Price"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="TowerIcon" type="TextureRect" parent="Shop/ShopContainer/Row3/Slot3"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 28.0
-offset_right = 91.0
-offset_bottom = 83.0
+offset_left = 34.0
+offset_top = 19.0
+offset_right = 86.0
+offset_bottom = 70.0
 
 [node name="Row4" type="HBoxContainer" parent="Shop/ShopContainer"]
-custom_minimum_size = Vector2(0, 175)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
 [node name="Slot1" type="TextureRect" parent="Shop/ShopContainer/Row4"]
-custom_minimum_size = Vector2(170, 0)
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
 expand_mode = 1
 
 [node name="TowerLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row4/Slot1"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 2.0
-offset_right = 123.0
-offset_bottom = 30.0
+offset_left = 22.0
+offset_top = -2.0
+offset_right = 98.0
+offset_bottom = 26.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -726,17 +728,17 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/normal_font_size = 16
 text = "Tower"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="PriceLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row4/Slot1"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 131.0
-offset_right = 123.0
-offset_bottom = 161.0
+offset_left = 22.0
+offset_top = 73.0
+offset_right = 98.0
+offset_bottom = 103.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -744,30 +746,30 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 16
 text = "Price"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="TowerIcon" type="TextureRect" parent="Shop/ShopContainer/Row4/Slot1"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 28.0
-offset_right = 91.0
-offset_bottom = 83.0
+offset_left = 34.0
+offset_top = 19.0
+offset_right = 86.0
+offset_bottom = 70.0
 
 [node name="Slot2" type="TextureRect" parent="Shop/ShopContainer/Row4"]
-custom_minimum_size = Vector2(170, 0)
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
 expand_mode = 1
 
 [node name="TowerLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row4/Slot2"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 2.0
-offset_right = 123.0
-offset_bottom = 30.0
+offset_left = 22.0
+offset_top = -2.0
+offset_right = 98.0
+offset_bottom = 26.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -775,17 +777,17 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/normal_font_size = 16
 text = "Tower"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="PriceLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row4/Slot2"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 131.0
-offset_right = 123.0
-offset_bottom = 161.0
+offset_left = 22.0
+offset_top = 73.0
+offset_right = 98.0
+offset_bottom = 103.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -793,30 +795,30 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 16
 text = "Price"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="TowerIcon" type="TextureRect" parent="Shop/ShopContainer/Row4/Slot2"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 28.0
-offset_right = 91.0
-offset_bottom = 83.0
+offset_left = 34.0
+offset_top = 19.0
+offset_right = 86.0
+offset_bottom = 70.0
 
 [node name="Slot3" type="TextureRect" parent="Shop/ShopContainer/Row4"]
-custom_minimum_size = Vector2(170, 0)
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
 expand_mode = 1
 
 [node name="TowerLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row4/Slot3"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 2.0
-offset_right = 123.0
-offset_bottom = 30.0
+offset_left = 22.0
+offset_top = -2.0
+offset_right = 98.0
+offset_bottom = 26.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -824,17 +826,17 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/normal_font_size = 16
 text = "Tower"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="PriceLabel" type="RichTextLabel" parent="Shop/ShopContainer/Row4/Slot3"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 131.0
-offset_right = 123.0
-offset_bottom = 161.0
+offset_left = 22.0
+offset_top = 73.0
+offset_right = 98.0
+offset_bottom = 103.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -842,34 +844,34 @@ theme_override_fonts/bold_font = ExtResource("5_4ajb7")
 theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 16
 text = "Price"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="TowerIcon" type="TextureRect" parent="Shop/ShopContainer/Row4/Slot3"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 28.0
-offset_right = 91.0
-offset_bottom = 83.0
+offset_left = 34.0
+offset_top = 19.0
+offset_right = 86.0
+offset_bottom = 70.0
 
 [node name="Terminal" type="TextureRect" parent="."]
 clip_contents = true
 layout_mode = 0
-offset_left = 1249.0
-offset_top = 901.0
-offset_right = 1842.0
-offset_bottom = 1038.0
+offset_left = 802.0
+offset_top = 546.0
+offset_right = 1212.0
+offset_bottom = 683.0
 texture = ExtResource("2_nayel")
 expand_mode = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Terminal"]
 layout_mode = 0
-offset_left = 38.0
-offset_top = 16.0
-offset_right = 450.0
-offset_bottom = 112.0
+offset_left = 39.0
+offset_top = 47.0
+offset_right = 451.0
+offset_bottom = 143.0
 mouse_filter = 1
 theme = ExtResource("4_fkehm")
 theme_override_fonts/normal_font = ExtResource("5_4ajb7")
@@ -878,5 +880,22 @@ theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/italics_font = ExtResource("5_4ajb7")
 theme_override_fonts/mono_font = ExtResource("5_4ajb7")
 theme_override_font_sizes/normal_font_size = 25
-text = "AAAAAAAA"
+text = "Terminal"
+fit_content = true
+
+[node name="Balance" type="RichTextLabel" parent="Terminal"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 8.0
+offset_right = 449.0
+offset_bottom = 104.0
+mouse_filter = 1
+theme = ExtResource("4_fkehm")
+theme_override_fonts/normal_font = ExtResource("5_4ajb7")
+theme_override_fonts/bold_font = ExtResource("5_4ajb7")
+theme_override_fonts/bold_italics_font = ExtResource("5_4ajb7")
+theme_override_fonts/italics_font = ExtResource("5_4ajb7")
+theme_override_fonts/mono_font = ExtResource("5_4ajb7")
+theme_override_font_sizes/normal_font_size = 25
+text = "Balance: 0"
 fit_content = true

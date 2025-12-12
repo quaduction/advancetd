@@ -64,10 +64,11 @@ fit_content = true
 [node name="TowerSlot" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 0
-offset_left = 21.0
-offset_top = 542.0
-offset_right = 477.0
-offset_bottom = 692.0
+offset_left = 23.0
+offset_top = 539.0
+offset_right = 479.0
+offset_bottom = 689.0
+theme_override_constants/separation = 16
 
 [node name="Slot1" type="TextureRect" parent="TowerSlot"]
 custom_minimum_size = Vector2(140, 0)

@@ -23,6 +23,7 @@ var states: Dictionary[State, StateHandler] = {};
 @warning_ignore_start("shadowed_global_identifier")
 @onready var LevelManager := $LevelManager;
 @onready var MenuManager := $MenuManager;
+@onready var Data := $Data;
 @warning_ignore_restore("shadowed_global_identifier")
 
 func _ready():
@@ -30,6 +31,7 @@ func _ready():
 	Game.main = self;
 	Game.levelManager = LevelManager;
 	Game.menuManager = MenuManager;
+	Game.data = Data;
 
 	# Start state machine
 	_load_states();

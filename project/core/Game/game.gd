@@ -5,3 +5,4 @@ extends Node;
 var main: Main;
 var levelManager: LevelManager;
 var menuManager: MenuManager;
+var data: Data;
