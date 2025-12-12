@@ -1,4 +1,9 @@
 extends StateHandler;
 
-func run(main: Main):
+var mainMenu;
+
+func load():
 	print("transition to main menu");
+
+	mainMenu = preload("res://ui/titleScreen/titleScreen.tscn").instantiate();
+	Game.menuManager.add_child(mainMenu);

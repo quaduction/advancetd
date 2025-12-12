@@ -2,17 +2,15 @@ extends StateHandler;
 
 var startupScreen := preload("res://ui/startupScreen/startup_screen.tscn").instantiate();
 
-func run(main: Main):
+func load():
 	Game.menuManager.add_child(startupScreen);
 
-	main.changeState(main.State.MAIN_MENU);
-	animOut();
+	Game.main.changeState(Game.main.State.MAIN_MENU);
 
-	print("finished run");
+	print("finished load");
 
-func animOut():
-	if !await Game.main.stateTransition == Game.main.State.MAIN_MENU: return;
-	
+func handoff():
+	print("whuh")
 	await startupScreen.slide_away();
 	print("over and out")
 	startupScreen.queue_free();

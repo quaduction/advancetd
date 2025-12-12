@@ -1,4 +1,7 @@
 extends Control;
 
+@onready var anim = $AnimationPlayer;
+
 func slide_away():
-	$AnimationPlayer.play("slide_out");
+	anim.play("slide_out");
+	await anim.animation_finished

@@ -4,6 +4,7 @@ extends Node;
 signal stateTransition(newState);
 
 enum State {
+	VOID,
 	STARTUP,
 	MAIN_MENU,
 	SETTINGS,
@@ -14,12 +15,15 @@ enum State {
 	PAUSE
 };
 
-var state: State = State.STARTUP;
-var stateIsNew := false;
+var state: State = State.VOID;
+var newState: State = State.STARTUP;
+
 var states: Dictionary[State, StateHandler] = {};
 
+@warning_ignore_start("shadowed_global_identifier")
 @onready var LevelManager := $LevelManager;
 @onready var MenuManager := $MenuManager;
+@warning_ignore_restore("shadowed_global_identifier")
 
 func _ready():
 	# Uplink to the global autoload
@@ -47,22 +51,33 @@ func _load_states():
 func _run_state_machine() -> void:
 	while true:
 		if states.has(state):
-			var prerunState = state;
-
 			@warning_ignore("redundant_await")
 			await states[state].run(self);
-
-			var postrunState = state;
 			
-			if stateIsNew && prerunState == postrunState:
-				print("why is it herer", State.keys()[state])
-				stateIsNew = false;
+			if newState != state:
+				await transitionStates();
 				stateTransition.emit(state);
+
 		await get_tree().process_frame;
 
 
-func changeState(newState: State) -> void:
+
+func transitionStates():
+	if !(states.has(state) && states.has(newState)): return;
+
+	var bakNewState = newState; # Prevent "redirector" states from getting skipped over
+
+	await states[state].unload();
+
+	await states[bakNewState].load();
+
+	print(states[state], states[state].handoff);
+	await states[state].handoff();
+
+	state = bakNewState;
+
+
+func changeState(toState: State) -> void:
 	if newState == state: return;
 
-	stateIsNew = true;
-	state = newState;
+	newState = toState;
