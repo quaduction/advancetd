@@ -1,4 +1,7 @@
+class_name Main;
 extends Node;
+
+signal stateTransition(newState);
 
 enum State {
 	STARTUP,
@@ -12,6 +15,7 @@ enum State {
 };
 
 var state: State = State.STARTUP;
+var stateIsNew := false;
 var states: Dictionary[State, StateHandler] = {};
 
 @onready var LevelManager := $LevelManager;
@@ -19,9 +23,9 @@ var states: Dictionary[State, StateHandler] = {};
 
 func _ready():
 	# Uplink to the global autoload
-	Game.Main = self;
-	Game.LevelManager = LevelManager;
-	Game.MenuManager = MenuManager;
+	Game.main = self;
+	Game.levelManager = LevelManager;
+	Game.menuManager = MenuManager;
 
 	# Start state machine
 	_load_states();
@@ -43,6 +47,22 @@ func _load_states():
 func _run_state_machine() -> void:
 	while true:
 		if states.has(state):
+			var prerunState = state;
+
 			@warning_ignore("redundant_await")
 			await states[state].run(self);
+
+			var postrunState = state;
+			
+			if stateIsNew && prerunState == postrunState:
+				print("why is it herer", State.keys()[state])
+				stateIsNew = false;
+				stateTransition.emit(state);
 		await get_tree().process_frame;
+
+
+func changeState(newState: State) -> void:
+	if newState == state: return;
+
+	stateIsNew = true;
+	state = newState;

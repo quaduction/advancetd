@@ -1,3 +1,4 @@
+class_name LevelManager;
 extends Node2D;
 
 signal levelLoaded(levelNode: Node);

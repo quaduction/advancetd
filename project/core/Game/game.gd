@@ -2,6 +2,6 @@ extends Node;
 
 # Become Global
 
-var Main;
-var LevelManager;
-var MenuManager;
+var main: Main;
+var levelManager: LevelManager;
+var menuManager: MenuManager;
