@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cau45cvb0smow"]
 
-[ext_resource type="Shader" uid="uid://djoxrgbb35ppr" path="res://UI/screenShader/assets/vignette.gdshader" id="1_2cuth"]
-[ext_resource type="Shader" uid="uid://cxt6mxkis6dj6" path="res://UI/screenShader/assets/crt.gdshader" id="2_ias74"]
+[ext_resource type="Shader" uid="uid://djoxrgbb35ppr" path="res://ui/screenShader/assets/vignette.gdshader" id="1_2cuth"]
+[ext_resource type="Shader" uid="uid://cxt6mxkis6dj6" path="res://ui/screenShader/assets/crt.gdshader" id="2_ias74"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_605c0"]
 shader = ExtResource("2_ias74")
@@ -44,14 +44,14 @@ grow_vertical = 2
 [node name="CRT" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_605c0")
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_right = 1283.0
+offset_bottom = 730.0
 color = Color(1, 1, 1, 0)
 
 [node name="Vignette" type="ColorRect" parent="."]
 visible = false
 material = SubResource("ShaderMaterial_ias74")
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_right = 1281.0
+offset_bottom = 741.0
 color = Color(1, 1, 1, 0)

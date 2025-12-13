@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dbv0xi30bfdsm" path="res://ui/settingsScreen/assets/background.png" id="1_7ncl2"]
 [ext_resource type="Texture2D" uid="uid://b2yppsybmku8t" path="res://common/assets/textures/ui/rectangle.png" id="2_a5gc7"]
 [ext_resource type="Texture2D" uid="uid://ruyhc0gb3c8t" path="res://ui/titleScreen/assets/title.png" id="2_mbfur"]
-[ext_resource type="Script" path="res://UI/infoScreen/assets/masterAudioSlider.gd" id="3_3dt3i"]
+[ext_resource type="Script" uid="uid://d3357o3prrjrf" path="res://ui/settingsScreen/masterAudioSlider.gd" id="3_3dt3i"]
 [ext_resource type="Script" uid="uid://du8alxm7siyh2" path="res://ui/settingsScreen/musicAudioSlider.gd" id="4_0nn01"]
 [ext_resource type="Theme" uid="uid://dvuu2bpdvg5sk" path="res://common/theme.tres" id="4_nawmw"]
 [ext_resource type="Script" uid="uid://ciwny5heehxta" path="res://ui/settingsScreen/SfxAudioSlider.gd" id="5_0nn01"]
@@ -20,26 +20,26 @@ grow_vertical = 2
 layout_mode = 0
 offset_left = -4.0
 offset_top = -3.0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_right = 1281.0
+offset_bottom = 723.0
 texture = ExtResource("1_7ncl2")
 expand_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 140.0
-offset_top = 271.0
-offset_right = 868.0
-offset_bottom = 981.0
+offset_left = 325.0
+offset_top = 170.0
+offset_right = 978.0
+offset_bottom = 664.0
 texture = ExtResource("2_a5gc7")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 219.0
-offset_top = 340.0
-offset_right = 811.0
-offset_bottom = 952.0
+offset_left = 351.0
+offset_top = 192.0
+offset_right = 943.0
+offset_bottom = 804.0
 theme_override_constants/separation = 24
 
 [node name="GVLabel" type="RichTextLabel" parent="VBoxContainer"]
@@ -89,10 +89,10 @@ bus_name = "Sfx"
 
 [node name="Title" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 622.0
-offset_top = 63.0
-offset_right = 1317.0
-offset_bottom = 189.0
+offset_left = 414.0
+offset_top = 37.0
+offset_right = 944.0
+offset_bottom = 115.0
 texture = ExtResource("2_mbfur")
 expand_mode = 1
 stretch_mode = 5
