@@ -29,6 +29,7 @@ var states: Dictionary[State, StateHandler] = {};
 func _ready():
 	# Uplink to the global autoload
 	Game.main = self;
+	Game.states = State;
 	Game.levelManager = LevelManager;
 	Game.menuManager = MenuManager;
 	Game.data = Data;
