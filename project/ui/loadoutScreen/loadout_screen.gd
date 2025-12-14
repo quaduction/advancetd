@@ -56,7 +56,7 @@ func refresh_shop_ui() -> void:
 			if Game.data.towersOwned[id]:
 				price_label.text = "Owned";
 			else:
-				price_label.text = "%d⋲" % Game.data.towers[id].price;
+				price_label.text = "%d⋲" % Game.data.towers[id].credit_price;
 
 			apply_tower_icon(icon, id);
 
@@ -85,7 +85,7 @@ func apply_tower_icon(icon: TextureRect, id: String) -> void:
 	icon.expand = true;
 	icon.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED;
 
-	var scale_value: float = float(Game.data.towers[id].scale);
+	var scale_value: float = float(Game.data.towers[id].display_scale);
 	icon.scale = Vector2(scale_value, scale_value);
 	icon.pivot_offset = icon.size * 0.5;
 
@@ -128,7 +128,7 @@ func handle_shop_click(slot) -> void:
 		show_message("[color=gray]Selected %s[/color]" % Game.data.towers[id].name);
 		return ;
 
-	var price: int = Game.data.towers[id].price;
+	var price: int = Game.data.towers[id].credit_price;
 	if Game.data.credits < price:
 		show_message("[color=red]Not enough balance[/color]");
 		return ;

@@ -23,10 +23,6 @@ func loadTowerDefinitions() -> void:
 	for tower: Dictionary in tower_array:
 		var id: String = tower["id"];
 
-		towers[id] = {
-			"name": tower["name"],
-			"price": tower["credit_price"],
-			"scale": tower.get("scale", 1.0)
-		};
+		towers[id] = tower;
 
 		towersOwned[id] = false;

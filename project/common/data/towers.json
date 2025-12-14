@@ -3,42 +3,66 @@
     {
       "id": "scout",
       "name": "Scout",
+      "display_scale": 3,
       "credit_price": 80,
       "cash_price": 100,
-      "scale": 3,
-      "damage": 1,
-      "firerate": 1,
-      "range": 20
+      "size": 20,
+      "levels": [
+        {
+          "range": 20,
+          "damage": 1,
+          "firerate": 1,
+          "upgrade_price": 200
+        }
+      ]
     },
     {
       "id": "soldier",
       "name": "Soldier",
+      "display_scale": 3,
       "credit_price": 100,
       "cash_price": 225,
-      "scale": 3,
-      "damage": 3,
-      "firerate": 0.75,
-      "range": 60
+      "size": 20,
+      "levels": [
+        {
+          "range": 60,
+          "damage": 3,
+          "firerate": 0.75,
+          "upgrade_price": 800
+        }
+      ]
     },
     {
       "id": "sentry",
       "name": "Sentry",
+      "display_scale": 3,
       "credit_price": 120,
       "cash_price": 800,
-      "scale": 3,
-      "damage": 1,
-      "firerate": 5,
-      "range": 45
+      "size": 20,
+      "levels": [
+        {
+          "range": 45,
+          "damage": 1,
+          "firerate": 5,
+          "upgrade_price": 2000
+        }
+      ]
     },
     {
       "id": "turret",
       "name": "Marbakar",
+      "display_scale": 2.5,
       "credit_price": 400,
       "cash_price": 2200,
-      "scale": 1.5,
-      "damage": 4,
-      "firerate": 7,
-      "range": 70
+      "size": 40,
+      "levels": [
+        {
+          "damage": 4,
+          "firerate": 7,
+          "range": 70,
+          "upgrade_price": 4000
+        }
+      ]
     }
   ]
 }
