@@ -3,13 +3,13 @@ extends Control;
 
 const ICON := "res://common/assets/textures/sprites/towers/";
 
-var selected_tower: String = "";
-
 @onready var terminal_text: RichTextLabel = $Terminal/RichTextLabel;
 @onready var terminal_balance: RichTextLabel = $Terminal/Balance;
 
 @onready var shop_container := $Shop/ShopContainer;
 @onready var tower_container := $TowerSlots/TowerContainer;
+
+var selected_tower: String = "";
 
 
 func _ready() -> void:
