@@ -1,6 +1,6 @@
 extends Control;
 
-const TOWERS := "res://common/data/towers.json";
+
 const ICON := "res://common/assets/textures/sprites/towers/";
 
 var selected_tower: String = "";
@@ -13,34 +13,11 @@ var selected_tower: String = "";
 
 
 func _ready() -> void:
-	load_tower_definitions();
 	connect_shop_slots();
 	connect_tower_slots();
 	refresh_ui();
 
 	show_message("[color=gray]Click a tower to purchase or select. Then click a slot to equip.[/color]");
-
-# 
-# Data loading
-# 
-
-func load_tower_definitions() -> void:
-	if not Game.data.towers.is_empty(): return ;
-
-	var file := FileAccess.open(TOWERS, FileAccess.READ);
-	var json: Dictionary = JSON.parse_string(file.get_as_text());
-	var tower_array: Array = json["towers"];
-
-	for tower: Dictionary in tower_array:
-		var id: String = tower["id"];
-
-		Game.data.towers[id] = {
-			"name": tower["name"],
-			"price": tower["credit_price"],
-			"scale": tower.get("scale", 1.0)
-		};
-
-		Game.data.towersOwned[id] = false;
 
 # 
 # UI Refresh
