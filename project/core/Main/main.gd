@@ -81,6 +81,6 @@ func transitionStates():
 
 
 func changeState(toState: State) -> void:
-	if newState == state: return;
+	if toState == state: return ;
 
 	newState = toState;
