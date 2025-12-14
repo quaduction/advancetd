@@ -2,7 +2,7 @@ extends Control;
 
 
 func _on_play_pressed() -> void:
-	pass # Replace with function body.
+	Game.main.changeState(Game.states.LOADOUT_SELECT);
 
 func _on_settings_pressed() -> void:
 	Game.main.changeState(Game.states.SETTINGS);
