@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvc5gp3nka7re"]
+[gd_scene load_steps=12 format=3 uid="uid://bvc5gp3nka7re"]
 
 [ext_resource type="Texture2D" uid="uid://cagocema6d7e2" path="res://ui/loadoutScreen/assets/background.png" id="1_g44nd"]
 [ext_resource type="Script" uid="uid://c1b6ui8pg5bgu" path="res://ui/loadoutScreen/loadout_screen.gd" id="1_tn1ga"]
@@ -8,6 +8,9 @@
 [ext_resource type="FontFile" uid="uid://ddojiyaaeaubi" path="res://common/assets/fonts/PixelifySans-VariableFont_wght.ttf" id="5_4ajb7"]
 [ext_resource type="Texture2D" uid="uid://ceb65qoeqkxcv" path="res://ui/loadoutScreen/assets/towercontainer.png" id="6_4ajb7"]
 [ext_resource type="Texture2D" uid="uid://1yfwy73328sh" path="res://common/assets/textures/sprites/towers/scout.tres" id="8_gvo10"]
+[ext_resource type="Texture2D" uid="uid://bsf07ac4xqe3s" path="res://common/assets/textures/ui/return.png" id="9_54jsq"]
+[ext_resource type="Texture2D" uid="uid://bql0cldft0ypl" path="res://common/assets/textures/ui/returnclick.png" id="10_8bfpf"]
+[ext_resource type="Texture2D" uid="uid://tc8mbwuuejji" path="res://common/assets/textures/ui/returnhover.png" id="11_yckax"]
 
 [node name="LoadoutScreen" type="Control"]
 layout_mode = 3
@@ -29,10 +32,10 @@ expand_mode = 2
 
 [node name="TowerSlots" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 46.0
-offset_top = 19.0
-offset_right = 449.0
-offset_bottom = 688.0
+offset_left = 203.0
+offset_top = 16.0
+offset_right = 606.0
+offset_bottom = 685.0
 texture = ExtResource("2_nayel")
 expand_mode = 1
 
@@ -912,3 +915,16 @@ theme_override_fonts/mono_font = ExtResource("5_4ajb7")
 theme_override_font_sizes/normal_font_size = 25
 text = "Balance: 0"
 fit_content = true
+
+[node name="Return" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 0
+offset_left = 28.0
+offset_top = 599.0
+offset_right = 115.0
+offset_bottom = 684.0
+texture_normal = ExtResource("9_54jsq")
+texture_pressed = ExtResource("10_8bfpf")
+texture_hover = ExtResource("11_yckax")
+ignore_texture_size = true
+stretch_mode = 5
