@@ -4,25 +4,41 @@
       "id": "scout",
       "name": "Scout",
       "credit_price": 80,
-      "scale": 3
+      "cash_price": 100,
+      "scale": 3,
+      "damage": 1,
+      "firerate": 1,
+      "range": 20
     },
     {
       "id": "soldier",
       "name": "Soldier",
       "credit_price": 100,
-      "scale": 3
+      "cash_price": 225,
+      "scale": 3,
+      "damage": 3,
+      "firerate": 0.75,
+      "range": 60
     },
     {
       "id": "sentry",
       "name": "Sentry",
       "credit_price": 120,
-      "scale": 3
+      "cash_price": 800,
+      "scale": 3,
+      "damage": 1,
+      "firerate": 5,
+      "range": 45
     },
     {
       "id": "turret",
       "name": "Marbakar",
       "credit_price": 400,
-      "scale": 1.5
+      "cash_price": 2200,
+      "scale": 1.5,
+      "damage": 4,
+      "firerate": 7,
+      "range": 70
     }
   ]
 }

@@ -1,11 +1,11 @@
 extends Control
 
-const TOWERS_JSON := "res://common/data/towers.json"
-const ICON_PATH := "res://common/assets/textures/sprites/towers/"
+const TOWERS := "res://common/data/towers.json"
+const ICON := "res://common/assets/textures/sprites/towers/"
 
-var towers: Dictionary = {}
-var towersOwned: Dictionary = {}
-var towersEquipped: Dictionary = {}
+# var towers: Dictionary = {}
+# var towersOwned: Dictionary = {}
+# var towersEquipped: Dictionary = {}
 #var balance: int = 500
 var selected_tower: String = ""
 
@@ -19,25 +19,25 @@ func _ready() -> void:
 	load_towers()
 	load_shop()
 	connect_tower_slots()
-	updateTerminal("Click on a tower to purchase or select. With one selected, click on a tower slot to equip.")
+	updateTerminal("[color=gray]Click on a tower to purchase or select. With one selected, click on a tower slot to equip.[/color]")
 
 func load_towers():
-	var file: FileAccess = FileAccess.open(TOWERS_JSON, FileAccess.READ)
+	var file: FileAccess = FileAccess.open(TOWERS, FileAccess.READ)
 
 	var json: Dictionary = JSON.parse_string(file.get_as_text())
 	var tower_array: Array = json["towers"]
 
 	for tower: Dictionary in tower_array:
 		var id: String = tower["id"]
-		towers[id] = {
+		Game.data.towers[id] = {
 			"name": tower["name"],
 			"price": tower["credit_price"],
 			"scale": tower.get("scale", 1)
 		}
-		towersOwned[id] = false
+		Game.data.towersOwned[id] = false
 
 func load_shop():
-	var tower_ids: Array = towers.keys()
+	var tower_ids: Array = Game.data.towers.keys()
 	var index: int = 0
 
 	for row in shop_container.get_children():
@@ -57,14 +57,14 @@ func load_shop():
 			var price_label: RichTextLabel = slot.get_node("PriceLabel")
 			var icon: TextureRect = slot.get_node("TowerIcon")
 
-			name_label.text = towers[id].name
-			price_label.text = str(towers[id].price) + "⋲"
+			name_label.text = Game.data.towers[id].name
+			price_label.text = str(Game.data.towers[id].price) + "⋲"
 
-			icon.texture = load(ICON_PATH + id + ".tres")
+			icon.texture = load(ICON + id + ".tres")
 			icon.expand = true
 			icon.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
 
-			var scale_value: float = float(towers[id].scale)
+			var scale_value: float = float(Game.data.towers[id].scale)
 			icon.scale = Vector2(scale_value, scale_value)
 
 			icon.pivot_offset = icon.size * 0.5
@@ -77,22 +77,22 @@ func load_shop():
 func on_shop_slot_pressed(slot):
 	var id: String = slot.get_meta("tower_id")
 
-	if towersOwned[id]:
+	if Game.data.towersOwned[id]:
 		selected_tower = id
-		updateTerminal("Selected " + towers[id].name)
+		updateTerminal("[color=gray]Selected " + Game.data.towers[id].name + "[/color]")
 		return
 
-	var price: int = towers[id].price
+	var price: int = Game.data.towers[id].price
 	if Game.data.credits < price:
 		updateTerminal("[color=red]Not enough balance[/color]")
 		return
 
 	Game.data.credits -= price
-	towersOwned[id] = true
+	Game.data.towersOwned[id] = true
 	selected_tower = id
 
 	slot.get_node("PriceLabel").text = "Owned"
-	updateTerminal("Purchased " + towers[id].name)
+	updateTerminal("[color=gray]Purchased " + Game.data.towers[id].name + "[/color]")
 
 func connect_tower_slots():
 	for slot in tower_container.get_children():
@@ -102,38 +102,46 @@ func connect_tower_slots():
 		)
 
 func on_tower_slot_pressed(slot):
-	if towersEquipped.has(slot):
-		var id: String = towersEquipped[slot]
-		towersEquipped.erase(slot)
+	if Game.data.towersEquipped.has(slot):
+		var id: String = Game.data.towersEquipped[slot]
+		Game.data.towersEquipped.erase(slot)
 
 		slot.get_node("RichTextLabel").text = ""
 		slot.get_node("TowerIcon").texture = null
 
-		updateTerminal("Removed " + towers[id].name)
+		updateTerminal("[color=gray]Removed " + Game.data.towers[id].name + "[/color]")
 		return
 
 	if selected_tower == "":
 		updateTerminal("[color=yellow]No tower selected[/color]")
 		return
 
-	if not towersOwned[selected_tower]:
+	if not Game.data.towersOwned[selected_tower]:
 		updateTerminal("[color=red]Tower not owned[/color]")
 		return
 
-	towersEquipped[slot] = selected_tower
-	slot.get_node("RichTextLabel").text = towers[selected_tower].name
+	if Game.data.towersEquipped.values().has(selected_tower):
+		updateTerminal(
+			"[color=orange]" +
+			Game.data.towers[selected_tower].name +
+			" is already equipped[/color]"
+		)
+		return
+
+	Game.data.towersEquipped[slot] = selected_tower
+	slot.get_node("RichTextLabel").text = Game.data.towers[selected_tower].name
 
 	var icon: TextureRect = slot.get_node("TowerIcon")
-	icon.texture = load(ICON_PATH + selected_tower + ".tres")
+	icon.texture = load(ICON + selected_tower + ".tres")
 	icon.expand = true
 	icon.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
 
-	var scale_value: float = float(towers[selected_tower].scale)
+	var scale_value: float = float(Game.data.towers[selected_tower].scale)
 	icon.scale = Vector2(scale_value, scale_value)
 	icon.pivot_offset = icon.size * 0.5
 
-	updateTerminal("Equipped " + towers[selected_tower].name)
+	updateTerminal("[color=gray]Equipped " + Game.data.towers[selected_tower].name + "[/color]")
 
 func updateTerminal(value):
-	terminalBalance.text = "Balance: " + str(Game.data.credits) + "⋲"
+	terminalBalance.text = "Balance: [color=gold]" + str(Game.data.credits) + "⋲[/color]"
 	terminalText.text = value
