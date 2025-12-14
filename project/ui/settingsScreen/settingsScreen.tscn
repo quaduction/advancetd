@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://bysicf1758xei"]
+[gd_scene load_steps=11 format=3 uid="uid://bysicf1758xei"]
 
 [ext_resource type="Texture2D" uid="uid://dbv0xi30bfdsm" path="res://ui/settingsScreen/assets/background.png" id="1_7ncl2"]
 [ext_resource type="Texture2D" uid="uid://b2yppsybmku8t" path="res://common/assets/textures/ui/rectangle.png" id="2_a5gc7"]
 [ext_resource type="Texture2D" uid="uid://ruyhc0gb3c8t" path="res://ui/titleScreen/assets/title.png" id="2_mbfur"]
-[ext_resource type="Script" path="res://ui/settingsScreen/masterAudioSlider.gd" id="3_3dt3i"]
+[ext_resource type="Script" uid="uid://d3357o3prrjrf" path="res://ui/settingsScreen/masterAudioSlider.gd" id="3_3dt3i"]
 [ext_resource type="Script" uid="uid://du8alxm7siyh2" path="res://ui/settingsScreen/musicAudioSlider.gd" id="4_0nn01"]
 [ext_resource type="Theme" uid="uid://dvuu2bpdvg5sk" path="res://common/theme.tres" id="4_nawmw"]
 [ext_resource type="Script" uid="uid://ciwny5heehxta" path="res://ui/settingsScreen/SfxAudioSlider.gd" id="5_0nn01"]
+[ext_resource type="Texture2D" uid="uid://bsf07ac4xqe3s" path="res://common/assets/textures/ui/return.png" id="8_xjm05"]
+[ext_resource type="Texture2D" uid="uid://bql0cldft0ypl" path="res://common/assets/textures/ui/returnclick.png" id="9_62atm"]
+[ext_resource type="Texture2D" uid="uid://tc8mbwuuejji" path="res://common/assets/textures/ui/returnhover.png" id="10_m2b8l"]
 
 [node name="SettingsScreen" type="Control"]
 layout_mode = 3
@@ -95,4 +98,17 @@ offset_right = 944.0
 offset_bottom = 115.0
 texture = ExtResource("2_mbfur")
 expand_mode = 1
+stretch_mode = 5
+
+[node name="Return" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 0
+offset_left = 27.0
+offset_top = 604.0
+offset_right = 114.0
+offset_bottom = 689.0
+texture_normal = ExtResource("8_xjm05")
+texture_pressed = ExtResource("9_62atm")
+texture_hover = ExtResource("10_m2b8l")
+ignore_texture_size = true
 stretch_mode = 5
