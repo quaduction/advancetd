@@ -60,13 +60,20 @@ func _run_state_machine() -> void:
 			if newState != state:
 				await transitionStates();
 				stateTransition.emit(state);
+		else:
+			push_warning("State script not found for: " + State.keys()[state]);
+			break ;
 
 		await get_tree().process_frame;
 
 
 
 func transitionStates():
-	if !(states.has(state) && states.has(newState)): return;
+	if !states.has(newState):
+		push_warning("State script not found for: " + State.keys()[state]);
+		return ;
+
+	if !states.has(state): return ;
 
 	var bakNewState = newState; # Prevent "redirector" states from getting skipped over
 
@@ -74,8 +81,9 @@ func transitionStates():
 
 	await states[bakNewState].load();
 
-	print(states[state], states[state].handoff);
 	await states[state].handoff();
+
+	print("State change complete: ", State.keys()[state], " --> ", State.keys()[bakNewState]);
 
 	state = bakNewState;
 
