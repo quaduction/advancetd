@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://48xk0rjvlrb7"]
+[gd_scene load_steps=9 format=3 uid="uid://48xk0rjvlrb7"]
 
+[ext_resource type="Script" uid="uid://duab183adevc3" path="res://ui/titleScreen/title_screen.gd" id="1_k67f7"]
 [ext_resource type="Texture2D" uid="uid://cjtlnvnh0lunm" path="res://common/assets/textures/ui/button.png" id="1_mfhu3"]
 [ext_resource type="Texture2D" uid="uid://c7fkjbvojl4ba" path="res://ui/titleScreen/assets/background.png" id="2_72tbe"]
 [ext_resource type="Texture2D" uid="uid://b3qfst3uirwau" path="res://common/assets/textures/ui/buttonclick.png" id="3_e8n7d"]
@@ -15,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_k67f7")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -120,3 +122,7 @@ theme_override_fonts/mono_font = ExtResource("3_x3en0")
 theme_override_font_sizes/normal_font_size = 25
 text = "Info"
 fit_content = true
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Info" to="." method="_on_info_pressed"]
