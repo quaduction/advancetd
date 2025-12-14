@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbrkfcga43e0l"]
+[gd_scene load_steps=8 format=3 uid="uid://bbrkfcga43e0l"]
 
 [ext_resource type="Texture2D" uid="uid://dbv0xi30bfdsm" path="res://ui/settingsScreen/assets/background.png" id="1_fi64q"]
+[ext_resource type="Script" uid="uid://b8lypwv2axc1j" path="res://ui/infoScreen/info_screen.gd" id="1_gm57l"]
 [ext_resource type="Texture2D" uid="uid://ruyhc0gb3c8t" path="res://ui/titleScreen/assets/title.png" id="2_a5xv7"]
 [ext_resource type="Texture2D" uid="uid://b2yppsybmku8t" path="res://common/assets/textures/ui/rectangle.png" id="3_v3w57"]
 [ext_resource type="Texture2D" uid="uid://bsf07ac4xqe3s" path="res://common/assets/textures/ui/return.png" id="4_fwfmb"]
@@ -14,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gm57l")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -55,3 +57,5 @@ texture_pressed = ExtResource("5_gm57l")
 texture_hover = ExtResource("6_lhv7d")
 ignore_texture_size = true
 stretch_mode = 5
+
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

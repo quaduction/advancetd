@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bysicf1758xei"]
+[gd_scene load_steps=12 format=3 uid="uid://bysicf1758xei"]
 
 [ext_resource type="Texture2D" uid="uid://dbv0xi30bfdsm" path="res://ui/settingsScreen/assets/background.png" id="1_7ncl2"]
+[ext_resource type="Script" uid="uid://c26leimuagsxs" path="res://ui/settingsScreen/settings_screen.gd" id="1_62atm"]
 [ext_resource type="Texture2D" uid="uid://b2yppsybmku8t" path="res://common/assets/textures/ui/rectangle.png" id="2_a5gc7"]
 [ext_resource type="Texture2D" uid="uid://ruyhc0gb3c8t" path="res://ui/titleScreen/assets/title.png" id="2_mbfur"]
-[ext_resource type="Script" uid="uid://d3357o3prrjrf" path="res://ui/settingsScreen/masterAudioSlider.gd" id="3_3dt3i"]
+[ext_resource type="Script" path="res://ui/settingsScreen/masterAudioSlider.gd" id="3_3dt3i"]
 [ext_resource type="Script" uid="uid://du8alxm7siyh2" path="res://ui/settingsScreen/musicAudioSlider.gd" id="4_0nn01"]
 [ext_resource type="Theme" uid="uid://dvuu2bpdvg5sk" path="res://common/theme.tres" id="4_nawmw"]
 [ext_resource type="Script" uid="uid://ciwny5heehxta" path="res://ui/settingsScreen/SfxAudioSlider.gd" id="5_0nn01"]
@@ -18,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_62atm")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -112,3 +114,5 @@ texture_pressed = ExtResource("9_62atm")
 texture_hover = ExtResource("10_m2b8l")
 ignore_texture_size = true
 stretch_mode = 5
+
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
