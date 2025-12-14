@@ -1,0 +1,128 @@
+[gd_scene load_steps=9 format=3 uid="uid://crchecgrk1d7d"]
+
+[ext_resource type="Script" uid="uid://c6rvyhaju0udo" path="res://ui/gameMenuScreen/title_screen.gd" id="1_n6nnx"]
+[ext_resource type="Texture2D" uid="uid://3nlu3bcqdinr" path="res://ui/gameMenuScreen/assets/background.png" id="2_ty231"]
+[ext_resource type="Texture2D" uid="uid://ruyhc0gb3c8t" path="res://common/assets/textures/ui/title.png" id="3_8r23p"]
+[ext_resource type="Texture2D" uid="uid://cjtlnvnh0lunm" path="res://common/assets/textures/ui/button.png" id="4_cerfi"]
+[ext_resource type="Texture2D" uid="uid://b3qfst3uirwau" path="res://common/assets/textures/ui/buttonclick.png" id="5_8nqm1"]
+[ext_resource type="Texture2D" uid="uid://cx5y11wiid0my" path="res://common/assets/textures/ui/buttonhover.png" id="6_xt44m"]
+[ext_resource type="Theme" uid="uid://dvuu2bpdvg5sk" path="res://common/theme.tres" id="7_8ycoc"]
+[ext_resource type="FontFile" uid="uid://ddojiyaaeaubi" path="res://common/assets/fonts/PixelifySans-VariableFont_wght.ttf" id="8_yfne8"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n6nnx")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -3.0
+offset_right = 1281.0
+offset_bottom = 721.0
+texture = ExtResource("2_ty231")
+expand_mode = 2
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 99.0
+offset_right = 632.0
+offset_bottom = 159.0
+texture = ExtResource("3_8r23p")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 237.0
+offset_right = 320.0
+offset_bottom = 592.0
+theme_override_constants/separation = 50
+
+[node name="Play" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+texture_normal = ExtResource("4_cerfi")
+texture_pressed = ExtResource("5_8nqm1")
+texture_hover = ExtResource("6_xt44m")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Play"]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 25.0
+offset_right = 120.0
+offset_bottom = 57.0
+mouse_filter = 1
+theme = ExtResource("7_8ycoc")
+theme_override_fonts/normal_font = ExtResource("8_yfne8")
+theme_override_fonts/bold_font = ExtResource("8_yfne8")
+theme_override_fonts/bold_italics_font = ExtResource("8_yfne8")
+theme_override_fonts/italics_font = ExtResource("8_yfne8")
+theme_override_fonts/mono_font = ExtResource("8_yfne8")
+theme_override_font_sizes/normal_font_size = 25
+text = "Play"
+fit_content = true
+
+[node name="Settings" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+texture_normal = ExtResource("4_cerfi")
+texture_pressed = ExtResource("5_8nqm1")
+texture_hover = ExtResource("6_xt44m")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Settings"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 25.0
+offset_right = 159.0
+offset_bottom = 57.0
+mouse_filter = 1
+theme = ExtResource("7_8ycoc")
+theme_override_fonts/normal_font = ExtResource("8_yfne8")
+theme_override_fonts/bold_font = ExtResource("8_yfne8")
+theme_override_fonts/bold_italics_font = ExtResource("8_yfne8")
+theme_override_fonts/italics_font = ExtResource("8_yfne8")
+theme_override_fonts/mono_font = ExtResource("8_yfne8")
+theme_override_font_sizes/normal_font_size = 25
+text = "Settings"
+fit_content = true
+
+[node name="Info" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+texture_normal = ExtResource("4_cerfi")
+texture_pressed = ExtResource("5_8nqm1")
+texture_hover = ExtResource("6_xt44m")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Info"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 25.0
+offset_right = 126.0
+offset_bottom = 57.0
+mouse_filter = 1
+theme = ExtResource("7_8ycoc")
+theme_override_fonts/normal_font = ExtResource("8_yfne8")
+theme_override_fonts/bold_font = ExtResource("8_yfne8")
+theme_override_fonts/bold_italics_font = ExtResource("8_yfne8")
+theme_override_fonts/italics_font = ExtResource("8_yfne8")
+theme_override_fonts/mono_font = ExtResource("8_yfne8")
+theme_override_font_sizes/normal_font_size = 25
+text = "Info"
+fit_content = true
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Info" to="." method="_on_info_pressed"]
