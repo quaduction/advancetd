@@ -67,7 +67,6 @@ func _run_state_machine() -> void:
 		await get_tree().process_frame;
 
 
-
 func transitionStates():
 	if !states.has(newState):
 		push_warning("State script not found for: " + State.keys()[state]);
