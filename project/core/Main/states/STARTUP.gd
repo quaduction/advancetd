@@ -7,10 +7,7 @@ func load():
 
 	Game.main.changeState(Game.main.State.MAIN_MENU);
 
-	print("finished load");
-
 func handoff():
-	print("whuh")
 	await startupScreen.slide_away();
-	print("over and out")
+
 	startupScreen.queue_free();
