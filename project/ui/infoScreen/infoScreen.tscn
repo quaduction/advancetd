@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dbv0xi30bfdsm" path="res://ui/settingsScreen/assets/background.png" id="1_fi64q"]
 [ext_resource type="Script" uid="uid://b8lypwv2axc1j" path="res://ui/infoScreen/info_screen.gd" id="1_gm57l"]
-[ext_resource type="Texture2D" uid="uid://ruyhc0gb3c8t" path="res://ui/titleScreen/assets/title.png" id="2_a5xv7"]
+[ext_resource type="Texture2D" uid="uid://ruyhc0gb3c8t" path="res://common/assets/textures/ui/title.png" id="2_a5xv7"]
 [ext_resource type="Texture2D" uid="uid://b2yppsybmku8t" path="res://common/assets/textures/ui/rectangle.png" id="3_v3w57"]
 [ext_resource type="Texture2D" uid="uid://bsf07ac4xqe3s" path="res://common/assets/textures/ui/return.png" id="4_fwfmb"]
 [ext_resource type="Texture2D" uid="uid://bql0cldft0ypl" path="res://common/assets/textures/ui/returnclick.png" id="5_gm57l"]
