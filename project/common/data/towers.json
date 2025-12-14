@@ -1,0 +1,28 @@
+{
+  "towers": [
+    {
+      "id": "scout",
+      "name": "Scout",
+      "credit_price": 80,
+      "scale": 3
+    },
+    {
+      "id": "soldier",
+      "name": "Soldier",
+      "credit_price": 100,
+      "scale": 3
+    },
+    {
+      "id": "sentry",
+      "name": "Sentry",
+      "credit_price": 120,
+      "scale": 3
+    },
+    {
+      "id": "turret",
+      "name": "Marbakar",
+      "credit_price": 400,
+      "scale": 1.5
+    }
+  ]
+}
