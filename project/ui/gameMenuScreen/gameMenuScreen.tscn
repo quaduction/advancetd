@@ -1,0 +1,195 @@
+[gd_scene load_steps=11 format=3 uid="uid://crchecgrk1d7d"]
+
+[ext_resource type="Script" uid="uid://c6rvyhaju0udo" path="res://ui/gameMenuScreen/title_screen.gd" id="1_n6nnx"]
+[ext_resource type="Texture2D" uid="uid://3nlu3bcqdinr" path="res://ui/gameMenuScreen/assets/background.png" id="2_ty231"]
+[ext_resource type="Texture2D" uid="uid://cjtlnvnh0lunm" path="res://common/assets/textures/ui/button.png" id="4_cerfi"]
+[ext_resource type="Texture2D" uid="uid://b3qfst3uirwau" path="res://common/assets/textures/ui/buttonclick.png" id="5_8nqm1"]
+[ext_resource type="Texture2D" uid="uid://cx5y11wiid0my" path="res://common/assets/textures/ui/buttonhover.png" id="6_xt44m"]
+[ext_resource type="Theme" uid="uid://dvuu2bpdvg5sk" path="res://common/theme.tres" id="7_8ycoc"]
+[ext_resource type="FontFile" uid="uid://ddojiyaaeaubi" path="res://common/assets/fonts/PixelifySans-VariableFont_wght.ttf" id="8_yfne8"]
+[ext_resource type="Texture2D" uid="uid://bsf07ac4xqe3s" path="res://common/assets/textures/ui/return.png" id="9_cerfi"]
+[ext_resource type="Texture2D" uid="uid://bql0cldft0ypl" path="res://common/assets/textures/ui/returnclick.png" id="10_8nqm1"]
+[ext_resource type="Texture2D" uid="uid://tc8mbwuuejji" path="res://common/assets/textures/ui/returnhover.png" id="11_xt44m"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n6nnx")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -3.0
+offset_right = 1281.0
+offset_bottom = 721.0
+texture = ExtResource("2_ty231")
+expand_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 263.0
+offset_right = 1194.0
+offset_bottom = 348.0
+theme_override_constants/separation = 100
+
+[node name="Map1" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 85)
+layout_mode = 2
+texture_normal = ExtResource("4_cerfi")
+texture_pressed = ExtResource("5_8nqm1")
+texture_hover = ExtResource("6_xt44m")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Map1"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 25.0
+offset_right = 195.0
+offset_bottom = 57.0
+mouse_filter = 1
+theme = ExtResource("7_8ycoc")
+theme_override_fonts/normal_font = ExtResource("8_yfne8")
+theme_override_fonts/bold_font = ExtResource("8_yfne8")
+theme_override_fonts/bold_italics_font = ExtResource("8_yfne8")
+theme_override_fonts/italics_font = ExtResource("8_yfne8")
+theme_override_fonts/mono_font = ExtResource("8_yfne8")
+theme_override_font_sizes/normal_font_size = 25
+text = "Map1"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Map2" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 85)
+layout_mode = 2
+texture_normal = ExtResource("4_cerfi")
+texture_pressed = ExtResource("5_8nqm1")
+texture_hover = ExtResource("6_xt44m")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Map2"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 25.0
+offset_right = 195.0
+offset_bottom = 57.0
+mouse_filter = 1
+theme = ExtResource("7_8ycoc")
+theme_override_fonts/normal_font = ExtResource("8_yfne8")
+theme_override_fonts/bold_font = ExtResource("8_yfne8")
+theme_override_fonts/bold_italics_font = ExtResource("8_yfne8")
+theme_override_fonts/italics_font = ExtResource("8_yfne8")
+theme_override_fonts/mono_font = ExtResource("8_yfne8")
+theme_override_font_sizes/normal_font_size = 25
+text = "Map2"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Map3" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 85)
+layout_mode = 2
+texture_normal = ExtResource("4_cerfi")
+texture_pressed = ExtResource("5_8nqm1")
+texture_hover = ExtResource("6_xt44m")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Map3"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 25.0
+offset_right = 195.0
+offset_bottom = 57.0
+mouse_filter = 1
+theme = ExtResource("7_8ycoc")
+theme_override_fonts/normal_font = ExtResource("8_yfne8")
+theme_override_fonts/bold_font = ExtResource("8_yfne8")
+theme_override_fonts/bold_italics_font = ExtResource("8_yfne8")
+theme_override_fonts/italics_font = ExtResource("8_yfne8")
+theme_override_fonts/mono_font = ExtResource("8_yfne8")
+theme_override_font_sizes/normal_font_size = 25
+text = "Map3"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Map4" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 85)
+layout_mode = 2
+texture_normal = ExtResource("4_cerfi")
+texture_pressed = ExtResource("5_8nqm1")
+texture_hover = ExtResource("6_xt44m")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Map4"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 25.0
+offset_right = 195.0
+offset_bottom = 57.0
+mouse_filter = 1
+theme = ExtResource("7_8ycoc")
+theme_override_fonts/normal_font = ExtResource("8_yfne8")
+theme_override_fonts/bold_font = ExtResource("8_yfne8")
+theme_override_fonts/bold_italics_font = ExtResource("8_yfne8")
+theme_override_fonts/italics_font = ExtResource("8_yfne8")
+theme_override_fonts/mono_font = ExtResource("8_yfne8")
+theme_override_font_sizes/normal_font_size = 25
+text = "Map4"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 582.0
+offset_right = 403.0
+offset_bottom = 667.0
+theme_override_constants/separation = 16
+
+[node name="Return" type="TextureButton" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 2
+texture_normal = ExtResource("9_cerfi")
+texture_pressed = ExtResource("10_8nqm1")
+texture_hover = ExtResource("11_xt44m")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Loadouts" type="TextureButton" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(200, 85)
+layout_mode = 2
+texture_normal = ExtResource("4_cerfi")
+texture_pressed = ExtResource("5_8nqm1")
+texture_hover = ExtResource("6_xt44m")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer2/Loadouts"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 27.0
+offset_right = 190.0
+offset_bottom = 59.0
+mouse_filter = 1
+theme = ExtResource("7_8ycoc")
+theme_override_fonts/normal_font = ExtResource("8_yfne8")
+theme_override_fonts/bold_font = ExtResource("8_yfne8")
+theme_override_fonts/bold_italics_font = ExtResource("8_yfne8")
+theme_override_fonts/italics_font = ExtResource("8_yfne8")
+theme_override_fonts/mono_font = ExtResource("8_yfne8")
+theme_override_font_sizes/normal_font_size = 25
+text = "Loadout"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
