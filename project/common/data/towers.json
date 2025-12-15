@@ -10,8 +10,8 @@
       "levels": [
         {
           "range": 20,
-          "damage": 2,
-          "firerate": 1,
+          "damage": 4,
+          "firerate": 0.8,
           "upgrade_price": 200
         }
       ]
@@ -27,7 +27,7 @@
         {
           "range": 20,
           "damage": 3,
-          "firerate": 0.75,
+          "firerate": 0.3,
           "upgrade_price": 800
         }
       ]
