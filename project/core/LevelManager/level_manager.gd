@@ -4,13 +4,27 @@ extends Node2D;
 signal levelLoaded(levelNode: Node);
 signal levelUnloaded(levelNode: Node);
 
-var currentLevel: Node;
+const MAPS_PATH := "res://levels/";
 
-func load(levelSoup):
-    currentLevel = SceneManager.bucketAttachInstance("activeLevel", self, levelSoup);
-    levelLoaded.emit(currentLevel);
+var currentLevel: Node = null;
 
-func unload():
-    if type_string(typeof(currentLevel)) == "Node":
-        levelUnloaded.emit(currentLevel);
-        SceneManager.freeBucket("activeLevel");
+func playLevel(mapName: String):
+	loadLevel(MAPS_PATH + "%s/%s.tscn" % [mapName, mapName]);
+	# await levelLoaded;
+
+func loadLevel(levelSoup):
+	currentLevel = SceneManager.bucketAttachInstance("activeLevel", self, levelSoup);
+	_mirror();
+
+	levelLoaded.emit(currentLevel);
+
+func unloadLevel():
+	if type_string(typeof(currentLevel)) == "Node":
+		SceneManager.freeBucket("activeLevel");
+		currentLevel = null;
+		_mirror();
+
+		levelUnloaded.emit(currentLevel);
+
+func _mirror():
+	Game.currentLevel = currentLevel;

@@ -91,3 +91,7 @@ func changeState(toState: State) -> void:
 	if toState == state: return ;
 
 	newState = toState;
+
+func enterLevel(levelName: String):
+	await LevelManager.playLevel(levelName);
+	changeState(State.LEVEL_PLAY);
