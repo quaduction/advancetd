@@ -1,10 +1,10 @@
 class_name PathEnemy;
 extends PathFollow2D;
 
-var cashYield := 10;
-var hp := 10.0;
-var baseDamage := 5.0;
-var speed := 1.0;
+@export var cashYield := 10;
+@export var hp := 10.0;
+@export var baseDamage := 5.0;
+@export var speed := 1.0;
 var isDestroyed := false;
 
 func _ready():
