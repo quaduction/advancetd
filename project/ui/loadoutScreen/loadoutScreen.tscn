@@ -7,7 +7,7 @@
 [ext_resource type="Theme" uid="uid://dvuu2bpdvg5sk" path="res://common/theme.tres" id="4_fkehm"]
 [ext_resource type="FontFile" uid="uid://ddojiyaaeaubi" path="res://common/assets/fonts/PixelifySans-VariableFont_wght.ttf" id="5_4ajb7"]
 [ext_resource type="Texture2D" uid="uid://ceb65qoeqkxcv" path="res://ui/loadoutScreen/assets/towercontainer.png" id="6_4ajb7"]
-[ext_resource type="Texture2D" path="res://common/assets/textures/sprites/towers/scout.tres" id="8_gvo10"]
+[ext_resource type="Texture2D" uid="uid://1yfwy73328sh" path="res://common/assets/textures/sprites/towers/scout.tres" id="8_gvo10"]
 [ext_resource type="Texture2D" uid="uid://bsf07ac4xqe3s" path="res://common/assets/textures/ui/return.png" id="9_54jsq"]
 [ext_resource type="Texture2D" uid="uid://bql0cldft0ypl" path="res://common/assets/textures/ui/returnclick.png" id="10_8bfpf"]
 [ext_resource type="Texture2D" uid="uid://tc8mbwuuejji" path="res://common/assets/textures/ui/returnhover.png" id="11_yckax"]

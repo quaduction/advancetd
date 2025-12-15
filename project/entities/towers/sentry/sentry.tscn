@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs86aqormsvyg"]
+
+[ext_resource type="PackedScene" uid="uid://dbtengbg553jk" path="res://entities/towers/projectileTower/projectile_tower.tscn" id="1_maxvc"]
+[ext_resource type="PackedScene" uid="uid://drkht5jkdqi57" path="res://entities/towers/projectileTower/bullet/base_bullet.tscn" id="2_6iv6l"]
+[ext_resource type="Texture2D" uid="uid://ckfn21h6ph52s" path="res://common/assets/textures/sprites/towers/sentry.tres" id="3_ta5l6"]
+
+[node name="ProjectileTower" instance=ExtResource("1_maxvc")]
+bullet = ExtResource("2_6iv6l")
+
+[node name="Sprite2D" parent="." index="3"]
+texture = ExtResource("3_ta5l6")
