@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cli2nchn1gmcm"]
+[gd_scene load_steps=9 format=3 uid="uid://cli2nchn1gmcm"]
 
+[ext_resource type="Script" uid="uid://gr2klrhvw02o" path="res://ui/hud/hud.gd" id="1_gfles"]
 [ext_resource type="Texture2D" uid="uid://b2yppsybmku8t" path="res://common/assets/textures/ui/rectangle.png" id="1_w75iv"]
 [ext_resource type="Texture2D" uid="uid://ceb65qoeqkxcv" path="res://ui/loadoutScreen/assets/towercontainer.png" id="2_imuuq"]
 [ext_resource type="Theme" uid="uid://dvuu2bpdvg5sk" path="res://common/theme.tres" id="3_kwc50"]
@@ -15,6 +16,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_gfles")
 
 [node name="TopSheet" type="TextureRect" parent="."]
 layout_mode = 0
@@ -404,6 +407,7 @@ offset_right = 85.0
 offset_bottom = 80.0
 
 [node name="UpgradeTower" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 844.0
 offset_top = 22.0
@@ -535,20 +539,20 @@ offset_top = 178.0
 offset_right = 315.0
 offset_bottom = 366.0
 
-[node name="UpgradeButton" type="TextureButton" parent="."]
+[node name="UpgradeButton" type="TextureButton" parent="UpgradeTower"]
 custom_minimum_size = Vector2(200, 85)
 layout_mode = 0
-offset_left = 962.0
-offset_top = 410.0
-offset_right = 1162.0
-offset_bottom = 495.0
+offset_left = 118.0
+offset_top = 388.0
+offset_right = 318.0
+offset_bottom = 473.0
 texture_normal = ExtResource("5_o2lis")
 texture_pressed = ExtResource("6_gfles")
 texture_hover = ExtResource("7_aixkq")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="RichTextLabel" type="RichTextLabel" parent="UpgradeButton"]
+[node name="RichTextLabel" type="RichTextLabel" parent="UpgradeTower/UpgradeButton"]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 25.0
