@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://h0nbm0lauiyu"]
+
+[ext_resource type="Script" uid="uid://bdgxpmqar0y5a" path="res://entities/towers/baseTower/base_tower.gd" id="1_b5ahg"]
+[ext_resource type="Texture2D" path="res://common/assets/textures/sprites/towers/soldier.tres" id="2_b5ahg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dr3l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n6an5"]
+
+[node name="BaseTower" type="Node2D"]
+script = ExtResource("1_b5ahg")
+
+[node name="CollisionArea" type="Area2D" parent="."]
+
+[node name="Highlight" type="ColorRect" parent="CollisionArea"]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(1, 1, 1, 0.4117647)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea"]
+shape = SubResource("RectangleShape2D_7dr3l")
+
+[node name="RangeArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="Highlight" type="ColorRect" parent="RangeArea"]
+visible = false
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(1, 1, 1, 0.4117647)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RangeArea"]
+shape = SubResource("CircleShape2D_n6an5")
+
+[node name="CooldownTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_b5ahg")
+
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timeout"]
