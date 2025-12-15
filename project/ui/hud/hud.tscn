@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cli2nchn1gmcm"]
+[gd_scene load_steps=8 format=3 uid="uid://cli2nchn1gmcm"]
 
 [ext_resource type="Texture2D" uid="uid://b2yppsybmku8t" path="res://common/assets/textures/ui/rectangle.png" id="1_w75iv"]
 [ext_resource type="Texture2D" uid="uid://ceb65qoeqkxcv" path="res://ui/loadoutScreen/assets/towercontainer.png" id="2_imuuq"]
 [ext_resource type="Theme" uid="uid://dvuu2bpdvg5sk" path="res://common/theme.tres" id="3_kwc50"]
 [ext_resource type="FontFile" uid="uid://ddojiyaaeaubi" path="res://common/assets/fonts/PixelifySans-VariableFont_wght.ttf" id="4_o2lis"]
+[ext_resource type="Texture2D" uid="uid://cjtlnvnh0lunm" path="res://common/assets/textures/ui/button.png" id="5_o2lis"]
+[ext_resource type="Texture2D" uid="uid://b3qfst3uirwau" path="res://common/assets/textures/ui/buttonclick.png" id="6_gfles"]
+[ext_resource type="Texture2D" uid="uid://cx5y11wiid0my" path="res://common/assets/textures/ui/buttonhover.png" id="7_aixkq"]
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -13,29 +16,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="TopSheet" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 25.0
-offset_right = 378.0
-offset_bottom = 125.0
+offset_right = 439.0
+offset_bottom = 123.0
 texture = ExtResource("1_w75iv")
 expand_mode = 1
 
-[node name="Row1" type="HBoxContainer" parent="Background"]
+[node name="Row1" type="HBoxContainer" parent="TopSheet"]
 layout_mode = 0
 offset_left = 26.0
 offset_top = 13.0
-offset_right = 312.0
+offset_right = 226.0
 offset_bottom = 87.0
 
-[node name="Row" type="VBoxContainer" parent="Background/Row1"]
+[node name="LeftRow" type="VBoxContainer" parent="TopSheet/Row1"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="PriceLabel" type="RichTextLabel" parent="Background/Row1/Row"]
+[node name="BalanceLabel" type="RichTextLabel" parent="TopSheet/Row1/LeftRow"]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_kwc50")
@@ -45,10 +48,11 @@ theme_override_fonts/bold_italics_font = ExtResource("4_o2lis")
 theme_override_fonts/italics_font = ExtResource("4_o2lis")
 theme_override_fonts/mono_font = ExtResource("4_o2lis")
 theme_override_font_sizes/normal_font_size = 22
-text = "Balance: 0⋲"
+bbcode_enabled = true
+text = "Balance: 0⋔"
 fit_content = true
 
-[node name="WaveLabel" type="RichTextLabel" parent="Background/Row1/Row"]
+[node name="WaveLabel" type="RichTextLabel" parent="TopSheet/Row1/LeftRow"]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_kwc50")
@@ -58,30 +62,65 @@ theme_override_fonts/bold_italics_font = ExtResource("4_o2lis")
 theme_override_fonts/italics_font = ExtResource("4_o2lis")
 theme_override_fonts/mono_font = ExtResource("4_o2lis")
 theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
 text = "Wave: 0"
 fit_content = true
 
+[node name="RightRow" type="VBoxContainer" parent="TopSheet/Row1"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TimerLabel" type="RichTextLabel" parent="TopSheet/Row1/RightRow"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_kwc50")
+theme_override_fonts/normal_font = ExtResource("4_o2lis")
+theme_override_fonts/bold_font = ExtResource("4_o2lis")
+theme_override_fonts/bold_italics_font = ExtResource("4_o2lis")
+theme_override_fonts/italics_font = ExtResource("4_o2lis")
+theme_override_fonts/mono_font = ExtResource("4_o2lis")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "00:00"
+fit_content = true
+
+[node name="HealthLabel" type="RichTextLabel" parent="TopSheet/Row1/RightRow"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_kwc50")
+theme_override_fonts/normal_font = ExtResource("4_o2lis")
+theme_override_fonts/bold_font = ExtResource("4_o2lis")
+theme_override_fonts/bold_italics_font = ExtResource("4_o2lis")
+theme_override_fonts/italics_font = ExtResource("4_o2lis")
+theme_override_fonts/mono_font = ExtResource("4_o2lis")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "Health: 100"
+fit_content = true
+
 [node name="TowerSlot" type="HBoxContainer" parent="."]
-custom_minimum_size = Vector2(0, 150)
+custom_minimum_size = Vector2(0, 115)
 layout_mode = 0
-offset_left = 23.0
-offset_top = 539.0
-offset_right = 479.0
-offset_bottom = 689.0
+offset_left = 13.0
+offset_top = 589.0
+offset_right = 693.0
+offset_bottom = 704.0
 theme_override_constants/separation = 16
 
 [node name="Slot1" type="TextureRect" parent="TowerSlot"]
-custom_minimum_size = Vector2(140, 0)
+custom_minimum_size = Vector2(115, 0)
 layout_mode = 2
 texture = ExtResource("2_imuuq")
 expand_mode = 1
 
 [node name="TowerLabel" type="RichTextLabel" parent="TowerSlot/Slot1"]
 layout_mode = 0
-offset_left = 31.0
-offset_top = 5.0
-offset_right = 107.0
-offset_bottom = 33.0
+offset_left = 21.0
+offset_top = -2.0
+offset_right = 97.0
+offset_bottom = 26.0
 mouse_filter = 1
 theme = ExtResource("3_kwc50")
 theme_override_fonts/normal_font = ExtResource("4_o2lis")
@@ -96,10 +135,10 @@ horizontal_alignment = 1
 
 [node name="PriceLabel" type="RichTextLabel" parent="TowerSlot/Slot1"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 109.0
-offset_right = 108.0
-offset_bottom = 139.0
+offset_left = 20.0
+offset_top = 80.0
+offset_right = 96.0
+offset_bottom = 110.0
 mouse_filter = 1
 theme = ExtResource("3_kwc50")
 theme_override_fonts/normal_font = ExtResource("4_o2lis")
@@ -114,23 +153,23 @@ horizontal_alignment = 1
 
 [node name="TowerIcon" type="TextureRect" parent="TowerSlot/Slot1"]
 layout_mode = 0
-offset_left = 38.0
-offset_top = 39.0
-offset_right = 97.0
-offset_bottom = 94.0
+offset_left = 26.0
+offset_top = 25.0
+offset_right = 85.0
+offset_bottom = 80.0
 
 [node name="Slot2" type="TextureRect" parent="TowerSlot"]
-custom_minimum_size = Vector2(140, 0)
+custom_minimum_size = Vector2(115, 0)
 layout_mode = 2
 texture = ExtResource("2_imuuq")
 expand_mode = 1
 
 [node name="TowerLabel" type="RichTextLabel" parent="TowerSlot/Slot2"]
 layout_mode = 0
-offset_left = 31.0
-offset_top = 5.0
-offset_right = 107.0
-offset_bottom = 33.0
+offset_left = 21.0
+offset_top = -2.0
+offset_right = 97.0
+offset_bottom = 26.0
 mouse_filter = 1
 theme = ExtResource("3_kwc50")
 theme_override_fonts/normal_font = ExtResource("4_o2lis")
@@ -145,10 +184,10 @@ horizontal_alignment = 1
 
 [node name="PriceLabel" type="RichTextLabel" parent="TowerSlot/Slot2"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 109.0
-offset_right = 108.0
-offset_bottom = 139.0
+offset_left = 20.0
+offset_top = 80.0
+offset_right = 96.0
+offset_bottom = 110.0
 mouse_filter = 1
 theme = ExtResource("3_kwc50")
 theme_override_fonts/normal_font = ExtResource("4_o2lis")
@@ -163,23 +202,23 @@ horizontal_alignment = 1
 
 [node name="TowerIcon" type="TextureRect" parent="TowerSlot/Slot2"]
 layout_mode = 0
-offset_left = 38.0
-offset_top = 39.0
-offset_right = 97.0
-offset_bottom = 94.0
+offset_left = 26.0
+offset_top = 25.0
+offset_right = 85.0
+offset_bottom = 80.0
 
 [node name="Slot3" type="TextureRect" parent="TowerSlot"]
-custom_minimum_size = Vector2(140, 0)
+custom_minimum_size = Vector2(115, 0)
 layout_mode = 2
 texture = ExtResource("2_imuuq")
 expand_mode = 1
 
 [node name="TowerLabel" type="RichTextLabel" parent="TowerSlot/Slot3"]
 layout_mode = 0
-offset_left = 31.0
-offset_top = 5.0
-offset_right = 107.0
-offset_bottom = 33.0
+offset_left = 21.0
+offset_top = -2.0
+offset_right = 97.0
+offset_bottom = 26.0
 mouse_filter = 1
 theme = ExtResource("3_kwc50")
 theme_override_fonts/normal_font = ExtResource("4_o2lis")
@@ -194,10 +233,10 @@ horizontal_alignment = 1
 
 [node name="PriceLabel" type="RichTextLabel" parent="TowerSlot/Slot3"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 109.0
-offset_right = 108.0
-offset_bottom = 139.0
+offset_left = 20.0
+offset_top = 80.0
+offset_right = 96.0
+offset_bottom = 110.0
 mouse_filter = 1
 theme = ExtResource("3_kwc50")
 theme_override_fonts/normal_font = ExtResource("4_o2lis")
@@ -212,23 +251,23 @@ horizontal_alignment = 1
 
 [node name="TowerIcon" type="TextureRect" parent="TowerSlot/Slot3"]
 layout_mode = 0
-offset_left = 38.0
-offset_top = 39.0
-offset_right = 97.0
-offset_bottom = 94.0
+offset_left = 26.0
+offset_top = 25.0
+offset_right = 85.0
+offset_bottom = 80.0
 
 [node name="Slot4" type="TextureRect" parent="TowerSlot"]
-custom_minimum_size = Vector2(140, 0)
+custom_minimum_size = Vector2(115, 0)
 layout_mode = 2
 texture = ExtResource("2_imuuq")
 expand_mode = 1
 
 [node name="TowerLabel" type="RichTextLabel" parent="TowerSlot/Slot4"]
 layout_mode = 0
-offset_left = 31.0
-offset_top = 5.0
-offset_right = 107.0
-offset_bottom = 33.0
+offset_left = 21.0
+offset_top = -2.0
+offset_right = 97.0
+offset_bottom = 26.0
 mouse_filter = 1
 theme = ExtResource("3_kwc50")
 theme_override_fonts/normal_font = ExtResource("4_o2lis")
@@ -243,10 +282,10 @@ horizontal_alignment = 1
 
 [node name="PriceLabel" type="RichTextLabel" parent="TowerSlot/Slot4"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 109.0
-offset_right = 108.0
-offset_bottom = 139.0
+offset_left = 20.0
+offset_top = 80.0
+offset_right = 96.0
+offset_bottom = 110.0
 mouse_filter = 1
 theme = ExtResource("3_kwc50")
 theme_override_fonts/normal_font = ExtResource("4_o2lis")
@@ -261,23 +300,23 @@ horizontal_alignment = 1
 
 [node name="TowerIcon" type="TextureRect" parent="TowerSlot/Slot4"]
 layout_mode = 0
-offset_left = 38.0
-offset_top = 39.0
-offset_right = 97.0
-offset_bottom = 94.0
+offset_left = 26.0
+offset_top = 25.0
+offset_right = 85.0
+offset_bottom = 80.0
 
 [node name="Slot5" type="TextureRect" parent="TowerSlot"]
-custom_minimum_size = Vector2(140, 0)
+custom_minimum_size = Vector2(115, 0)
 layout_mode = 2
 texture = ExtResource("2_imuuq")
 expand_mode = 1
 
 [node name="TowerLabel" type="RichTextLabel" parent="TowerSlot/Slot5"]
 layout_mode = 0
-offset_left = 31.0
-offset_top = 5.0
-offset_right = 107.0
-offset_bottom = 33.0
+offset_left = 21.0
+offset_top = -2.0
+offset_right = 97.0
+offset_bottom = 26.0
 mouse_filter = 1
 theme = ExtResource("3_kwc50")
 theme_override_fonts/normal_font = ExtResource("4_o2lis")
@@ -292,10 +331,10 @@ horizontal_alignment = 1
 
 [node name="PriceLabel" type="RichTextLabel" parent="TowerSlot/Slot5"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 109.0
-offset_right = 108.0
-offset_bottom = 139.0
+offset_left = 20.0
+offset_top = 80.0
+offset_right = 96.0
+offset_bottom = 110.0
 mouse_filter = 1
 theme = ExtResource("3_kwc50")
 theme_override_fonts/normal_font = ExtResource("4_o2lis")
@@ -310,23 +349,23 @@ horizontal_alignment = 1
 
 [node name="TowerIcon" type="TextureRect" parent="TowerSlot/Slot5"]
 layout_mode = 0
-offset_left = 38.0
-offset_top = 39.0
-offset_right = 97.0
-offset_bottom = 94.0
+offset_left = 26.0
+offset_top = 25.0
+offset_right = 85.0
+offset_bottom = 80.0
 
 [node name="Slot6" type="TextureRect" parent="TowerSlot"]
-custom_minimum_size = Vector2(140, 0)
+custom_minimum_size = Vector2(115, 0)
 layout_mode = 2
 texture = ExtResource("2_imuuq")
 expand_mode = 1
 
 [node name="TowerLabel" type="RichTextLabel" parent="TowerSlot/Slot6"]
 layout_mode = 0
-offset_left = 31.0
-offset_top = 5.0
-offset_right = 107.0
-offset_bottom = 33.0
+offset_left = 21.0
+offset_top = -2.0
+offset_right = 97.0
+offset_bottom = 26.0
 mouse_filter = 1
 theme = ExtResource("3_kwc50")
 theme_override_fonts/normal_font = ExtResource("4_o2lis")
@@ -341,10 +380,10 @@ horizontal_alignment = 1
 
 [node name="PriceLabel" type="RichTextLabel" parent="TowerSlot/Slot6"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 109.0
-offset_right = 108.0
-offset_bottom = 139.0
+offset_left = 20.0
+offset_top = 80.0
+offset_right = 96.0
+offset_bottom = 110.0
 mouse_filter = 1
 theme = ExtResource("3_kwc50")
 theme_override_fonts/normal_font = ExtResource("4_o2lis")
@@ -359,7 +398,171 @@ horizontal_alignment = 1
 
 [node name="TowerIcon" type="TextureRect" parent="TowerSlot/Slot6"]
 layout_mode = 0
-offset_left = 38.0
-offset_top = 39.0
-offset_right = 97.0
-offset_bottom = 94.0
+offset_left = 26.0
+offset_top = 25.0
+offset_right = 85.0
+offset_bottom = 80.0
+
+[node name="UpgradeTower" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 844.0
+offset_top = 22.0
+offset_right = 1259.0
+offset_bottom = 559.0
+texture = ExtResource("1_w75iv")
+expand_mode = 1
+
+[node name="TowerLabel" type="RichTextLabel" parent="UpgradeTower"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 20.0
+offset_right = 409.0
+offset_bottom = 50.0
+mouse_filter = 1
+theme = ExtResource("3_kwc50")
+theme_override_fonts/normal_font = ExtResource("4_o2lis")
+theme_override_fonts/bold_font = ExtResource("4_o2lis")
+theme_override_fonts/bold_italics_font = ExtResource("4_o2lis")
+theme_override_fonts/italics_font = ExtResource("4_o2lis")
+theme_override_fonts/mono_font = ExtResource("4_o2lis")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "Tower Name"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatLabel" type="HBoxContainer" parent="UpgradeTower"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 76.0
+offset_right = 496.0
+offset_bottom = 142.0
+theme_override_constants/separation = -10
+
+[node name="Row1" type="VBoxContainer" parent="UpgradeTower/StatLabel"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="DamageLabel" type="RichTextLabel" parent="UpgradeTower/StatLabel/Row1"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_kwc50")
+theme_override_fonts/normal_font = ExtResource("4_o2lis")
+theme_override_fonts/bold_font = ExtResource("4_o2lis")
+theme_override_fonts/bold_italics_font = ExtResource("4_o2lis")
+theme_override_fonts/italics_font = ExtResource("4_o2lis")
+theme_override_fonts/mono_font = ExtResource("4_o2lis")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "Damage: 0"
+fit_content = true
+
+[node name="RangeLabel" type="RichTextLabel" parent="UpgradeTower/StatLabel/Row1"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_kwc50")
+theme_override_fonts/normal_font = ExtResource("4_o2lis")
+theme_override_fonts/bold_font = ExtResource("4_o2lis")
+theme_override_fonts/bold_italics_font = ExtResource("4_o2lis")
+theme_override_fonts/italics_font = ExtResource("4_o2lis")
+theme_override_fonts/mono_font = ExtResource("4_o2lis")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "Range: 0"
+fit_content = true
+
+[node name="Row2" type="VBoxContainer" parent="UpgradeTower/StatLabel"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="FirerateLabel" type="RichTextLabel" parent="UpgradeTower/StatLabel/Row2"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_kwc50")
+theme_override_fonts/normal_font = ExtResource("4_o2lis")
+theme_override_fonts/bold_font = ExtResource("4_o2lis")
+theme_override_fonts/bold_italics_font = ExtResource("4_o2lis")
+theme_override_fonts/italics_font = ExtResource("4_o2lis")
+theme_override_fonts/mono_font = ExtResource("4_o2lis")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "Firerate: 0"
+fit_content = true
+
+[node name="TotalDamageLabel" type="RichTextLabel" parent="UpgradeTower/StatLabel/Row2"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_kwc50")
+theme_override_fonts/normal_font = ExtResource("4_o2lis")
+theme_override_fonts/bold_font = ExtResource("4_o2lis")
+theme_override_fonts/bold_italics_font = ExtResource("4_o2lis")
+theme_override_fonts/italics_font = ExtResource("4_o2lis")
+theme_override_fonts/mono_font = ExtResource("4_o2lis")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "Total Dmg: 0"
+fit_content = true
+
+[node name="UpgradeCostLabel" type="RichTextLabel" parent="UpgradeTower"]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 488.0
+offset_right = 342.0
+offset_bottom = 516.0
+mouse_filter = 1
+theme = ExtResource("3_kwc50")
+theme_override_fonts/normal_font = ExtResource("4_o2lis")
+theme_override_fonts/bold_font = ExtResource("4_o2lis")
+theme_override_fonts/bold_italics_font = ExtResource("4_o2lis")
+theme_override_fonts/italics_font = ExtResource("4_o2lis")
+theme_override_fonts/mono_font = ExtResource("4_o2lis")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "Upgrade Cost: 0"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TowerIcon" type="TextureRect" parent="UpgradeTower"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 178.0
+offset_right = 315.0
+offset_bottom = 366.0
+
+[node name="UpgradeButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(200, 85)
+layout_mode = 0
+offset_left = 962.0
+offset_top = 410.0
+offset_right = 1162.0
+offset_bottom = 495.0
+texture_normal = ExtResource("5_o2lis")
+texture_pressed = ExtResource("6_gfles")
+texture_hover = ExtResource("7_aixkq")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UpgradeButton"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 25.0
+offset_right = 195.0
+offset_bottom = 57.0
+mouse_filter = 1
+theme = ExtResource("3_kwc50")
+theme_override_fonts/normal_font = ExtResource("4_o2lis")
+theme_override_fonts/bold_font = ExtResource("4_o2lis")
+theme_override_fonts/bold_italics_font = ExtResource("4_o2lis")
+theme_override_fonts/italics_font = ExtResource("4_o2lis")
+theme_override_fonts/mono_font = ExtResource("4_o2lis")
+theme_override_font_sizes/normal_font_size = 25
+text = "Upgrade"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
