@@ -45,8 +45,8 @@ msgid "Loadout"
 msgstr "Chargement"
 
 #: ui/hud/hud.tscn
-msgid "Balance: 0⋔"
-msgstr "Solde : 0⋔"
+msgid "Balance: 0$"
+msgstr "Solde : 0$"
 
 #: ui/hud/hud.tscn
 msgid "Wave: 0"

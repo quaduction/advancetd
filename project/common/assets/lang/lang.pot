@@ -39,7 +39,7 @@ msgid "Loadout"
 msgstr ""
 
 #: ui/hud/hud.tscn
-msgid "Balance: 0⋔"
+msgid "Balance: 0$"
 msgstr ""
 
 #: ui/hud/hud.tscn

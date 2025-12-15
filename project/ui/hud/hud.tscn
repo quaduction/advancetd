@@ -52,7 +52,7 @@ theme_override_fonts/italics_font = ExtResource("4_o2lis")
 theme_override_fonts/mono_font = ExtResource("4_o2lis")
 theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
-text = "Balance: 0⋔"
+text = "Balance: 0$"
 fit_content = true
 
 [node name="WaveLabel" type="RichTextLabel" parent="TopSheet/Row1/LeftRow"]
