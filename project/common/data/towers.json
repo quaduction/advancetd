@@ -6,7 +6,7 @@
       "display_scale": 3,
       "credit_price": 80,
       "cash_price": 100,
-      "size": 20,
+      "size": 2,
       "levels": [
         {
           "range": 20,
@@ -22,10 +22,10 @@
       "display_scale": 3,
       "credit_price": 100,
       "cash_price": 225,
-      "size": 20,
+      "size": 2,
       "levels": [
         {
-          "range": 60,
+          "range": 20,
           "damage": 3,
           "firerate": 0.75,
           "upgrade_price": 800
@@ -38,10 +38,10 @@
       "display_scale": 3,
       "credit_price": 120,
       "cash_price": 800,
-      "size": 20,
+      "size": 2,
       "levels": [
         {
-          "range": 45,
+          "range": 30,
           "damage": 1,
           "firerate": 5,
           "upgrade_price": 2000
@@ -54,12 +54,12 @@
       "display_scale": 2.5,
       "credit_price": 400,
       "cash_price": 2200,
-      "size": 40,
+      "size": 4,
       "levels": [
         {
           "damage": 4,
           "firerate": 7,
-          "range": 70,
+          "range": 50,
           "upgrade_price": 4000
         }
       ]
