@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://cau45cvb0smow"]
+[gd_scene load_steps=3 format=3 uid="uid://cau45cvb0smow"]
 
-[ext_resource type="Shader" uid="uid://djoxrgbb35ppr" path="res://ui/screenShader/assets/vignette.gdshader" id="1_2cuth"]
 [ext_resource type="Shader" uid="uid://cxt6mxkis6dj6" path="res://ui/screenShader/assets/crt.gdshader" id="2_ias74"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_605c0"]
@@ -12,26 +11,20 @@ shader_parameter/grille_opacity = 0.10000000475
 shader_parameter/resolution = Vector2(1920, 1080)
 shader_parameter/pixelate = true
 shader_parameter/roll = true
-shader_parameter/roll_speed = 2.0
-shader_parameter/roll_size = 5.0000002375
+shader_parameter/roll_speed = 1.2
+shader_parameter/roll_size = 0.800000038
 shader_parameter/roll_variation = 4.00000018674012
 shader_parameter/distort_intensity = 0.05
 shader_parameter/noise_opacity = 0.2000000095
 shader_parameter/noise_speed = 10.0
 shader_parameter/static_noise_intensity = 0.06
-shader_parameter/aberration = 0.06000005035
+shader_parameter/aberration = 0.010000047974999982
 shader_parameter/brightness = 2.0
-shader_parameter/discolor = false
+shader_parameter/discolor = true
 shader_parameter/warp_amount = 1.0
 shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ias74"]
-shader = ExtResource("1_2cuth")
-shader_parameter/alpha = 1.0
-shader_parameter/inner_radius = 0.2
-shader_parameter/outer_radius = 1.5
 
 [node name="Shaders" type="Control"]
 layout_mode = 3
@@ -46,12 +39,5 @@ material = SubResource("ShaderMaterial_605c0")
 layout_mode = 0
 offset_right = 1283.0
 offset_bottom = 730.0
-color = Color(1, 1, 1, 0)
-
-[node name="Vignette" type="ColorRect" parent="."]
-visible = false
-material = SubResource("ShaderMaterial_ias74")
-layout_mode = 0
-offset_right = 1281.0
-offset_bottom = 741.0
+mouse_filter = 2
 color = Color(1, 1, 1, 0)
