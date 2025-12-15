@@ -6,6 +6,7 @@
 
 [node name="ProjectileTower" instance=ExtResource("1_maxvc")]
 bullet = ExtResource("2_6iv6l")
+towerTypeId = "sentry"
 
 [node name="Sprite2D" parent="." index="3"]
 texture = ExtResource("3_ta5l6")
