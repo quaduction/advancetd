@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://h0nbm0lauiyu"]
+[gd_scene load_steps=6 format=3 uid="uid://h0nbm0lauiyu"]
 
 [ext_resource type="Script" uid="uid://bdgxpmqar0y5a" path="res://entities/towers/baseTower/base_tower.gd" id="1_b5ahg"]
-[ext_resource type="Texture2D" path="res://common/assets/textures/sprites/towers/soldier.tres" id="2_b5ahg"]
+[ext_resource type="Texture2D" uid="uid://dwd20we6ntrhw" path="res://common/assets/textures/sprites/towers/soldier.tres" id="2_b5ahg"]
+[ext_resource type="Script" uid="uid://iwyhn4fsmdia" path="res://entities/towers/baseTower/collision_area.gd" id="2_rvph5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dr3l"]
 
@@ -11,6 +12,7 @@
 script = ExtResource("1_b5ahg")
 
 [node name="CollisionArea" type="Area2D" parent="."]
+script = ExtResource("2_rvph5")
 
 [node name="Highlight" type="ColorRect" parent="CollisionArea"]
 offset_left = -10.0
