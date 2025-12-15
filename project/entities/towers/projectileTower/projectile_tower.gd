@@ -5,6 +5,6 @@ extends Tower;
 
 func attack():
 	var projectile = bullet.instantiate();
-	projectile.init(self, currentTarget);
+	projectile.init(self, currentTarget.position);
 
 	Game.currentLevel.projectiles.add_child(projectile);
