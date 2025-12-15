@@ -5,7 +5,7 @@ signal levelEnd(won: bool);
 
 signal dataChange();
 
-@export var baseHealth := 1000;
+@export var baseHealth := 20;
 
 @export var cash := 0;
 @export var cashFlow := {
@@ -36,4 +36,8 @@ func gameOver(win: bool):
 	levelEnd.emit(win);
 
 func _on_salary_timer_timeout() -> void:
-	cash += cashFlow.amount;
+	mutBal(cashFlow.amount);
+
+func mutBal(mut: int):
+	cash += mut;
+	dataChange.emit();
