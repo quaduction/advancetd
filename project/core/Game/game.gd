@@ -7,6 +7,7 @@ var states;
 
 var levelManager: LevelManager;
 var currentLevel: Level;
+var hud;
 
 var menuManager: MenuManager;
 var data: Data;
