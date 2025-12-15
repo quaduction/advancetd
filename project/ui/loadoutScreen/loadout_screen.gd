@@ -31,7 +31,7 @@ func refresh_ui() -> void:
 	refresh_terminal();
 
 func refresh_terminal() -> void:
-	terminal_balance.text = "Balance: [color=gold]%dC[/color]" % Game.data.credits;
+	terminal_balance.text = "Balance: [color=gold]%d£[/color]" % Game.data.credits;
 
 func refresh_shop_ui() -> void:
 	var tower_ids := Game.data.towers.keys();
@@ -58,7 +58,7 @@ func refresh_shop_ui() -> void:
 			if Game.data.towersOwned[id]:
 				price_label.text = "Owned";
 			else:
-				price_label.text = "%dC" % Game.data.towers[id].credit_price;
+				price_label.text = "%d£" % Game.data.towers[id].credit_price;
 
 			apply_tower_icon(icon, id);
 
