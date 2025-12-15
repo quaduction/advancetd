@@ -53,6 +53,7 @@ func place():
 
 	deployed = true;
 	$Sprite2D.modulate.a = 1;
+	_highlightCollider("placed");
 
 func try_get_closest_target():
 	if !deployed: return ;

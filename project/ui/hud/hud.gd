@@ -11,6 +11,7 @@ func _ready() -> void:
 
 func _process(_delta):
 	refresh_info_ui();
+	refresh_loadout_bar_ui();
 
 func refresh_loadout_bar_ui() -> void:
 	var tower_ids := Game.data.towersEquipped;
@@ -42,7 +43,7 @@ func refresh_loadout_bar_ui() -> void:
 		else:
 			name_label.text = Game.data.towers[id].name;
 
-			var price = Game.data.towers[id].cash_price
+			var price = Game.data.towers[id].cash_price;
 			price_label.text = "[color=%s]$%d[/color]" % [
 				"white" if price < Game.currentLevel.cash else "red",
 				price
@@ -81,6 +82,9 @@ func connect_tower_slots():
 
 func handle_loadout_click(slot):
 	var id: String = slot.get_meta("tower_id");
+
+	if Game.data.towers[id].cash_price > Game.currentLevel.cash:
+		return
 
 	var tower = load("res://entities/towers/%s/%s.tscn" % [id, id]).instantiate();
 	Game.currentLevel.towerBuilder.startPlacement(tower);
