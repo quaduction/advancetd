@@ -56,9 +56,9 @@ stretch_mode = 4
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Play"]
 layout_mode = 0
-offset_left = 69.0
+offset_left = 1.0
 offset_top = 25.0
-offset_right = 120.0
+offset_right = 192.0
 offset_bottom = 57.0
 mouse_filter = 1
 theme = ExtResource("6_jmbr5")
@@ -70,6 +70,7 @@ theme_override_fonts/mono_font = ExtResource("3_x3en0")
 theme_override_font_sizes/normal_font_size = 25
 text = "Play"
 fit_content = true
+horizontal_alignment = 1
 
 [node name="Settings" type="TextureButton" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 85)
@@ -82,9 +83,9 @@ stretch_mode = 4
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Settings"]
 layout_mode = 0
-offset_left = 41.0
+offset_left = 1.0
 offset_top = 25.0
-offset_right = 159.0
+offset_right = 194.0
 offset_bottom = 57.0
 mouse_filter = 1
 theme = ExtResource("6_jmbr5")
@@ -96,6 +97,7 @@ theme_override_fonts/mono_font = ExtResource("3_x3en0")
 theme_override_font_sizes/normal_font_size = 25
 text = "Settings"
 fit_content = true
+horizontal_alignment = 1
 
 [node name="Info" type="TextureButton" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 85)
@@ -108,9 +110,9 @@ stretch_mode = 4
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Info"]
 layout_mode = 0
-offset_left = 75.0
+offset_left = 1.0
 offset_top = 25.0
-offset_right = 126.0
+offset_right = 192.0
 offset_bottom = 57.0
 mouse_filter = 1
 theme = ExtResource("6_jmbr5")
@@ -122,6 +124,7 @@ theme_override_fonts/mono_font = ExtResource("3_x3en0")
 theme_override_font_sizes/normal_font_size = 25
 text = "Info"
 fit_content = true
+horizontal_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
