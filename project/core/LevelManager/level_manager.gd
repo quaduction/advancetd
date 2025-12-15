@@ -4,6 +4,8 @@ extends Node2D;
 signal levelLoaded(levelNode: Node);
 signal levelUnloaded(levelNode: Node);
 
+signal levelEnded(won: bool);
+
 const MAPS_PATH := "res://levels/";
 const HUD_PATH := "res://ui/hud/hud.tscn";
 
@@ -23,13 +25,12 @@ func loadLevel(levelSoup):
 	levelLoaded.emit(currentLevel);
 
 func unloadLevel():
-	if type_string(typeof(currentLevel)) == "Node":
+	if is_instance_valid(currentLevel):
 		currentLevel.levelEnd.disconnect(_on_level_end);
 
 		SceneManager.freeBucket("activeLevel");
 		currentLevel = null;
 		_mirror();
-
 
 		levelUnloaded.emit(currentLevel);
 
@@ -39,5 +40,16 @@ func _mirror():
 
 
 func _on_level_end(won):
+	var screen;
+	if won:
+		screen = "res://ui/winScreen/winScreen.tscn";
+	else: 
+		screen = "res://ui/loseScreen/loseScreen.tscn";
+
+	var fate = SceneManager.bucketAttachInstance("activeLevel", Game.menuManager, screen);
+
+	await fate.fateAccepted;
+
+	levelEnded.emit(won)
+
 	unloadLevel();
-	pass;
