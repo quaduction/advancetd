@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://crchecgrk1d7d"]
+[gd_scene load_steps=13 format=3 uid="uid://crchecgrk1d7d"]
 
+[ext_resource type="Script" uid="uid://bjhvoomkjichi" path="res://ui/gameMenuScreen/game_menu_screen.gd" id="1_2vuhc"]
 [ext_resource type="Texture2D" uid="uid://3nlu3bcqdinr" path="res://ui/gameMenuScreen/assets/background.png" id="1_bkrfa"]
 [ext_resource type="Texture2D" uid="uid://cjtlnvnh0lunm" path="res://common/assets/textures/ui/button.png" id="2_ctdh4"]
 [ext_resource type="Texture2D" uid="uid://b3qfst3uirwau" path="res://common/assets/textures/ui/buttonclick.png" id="3_dpful"]
@@ -12,13 +13,14 @@
 [ext_resource type="Script" uid="uid://bnk6ytrjmug" path="res://ui/gameMenuScreen/loadouts_button.gd" id="10_ctdh4"]
 [ext_resource type="Script" uid="uid://cn774xdw21twg" path="res://ui/gameMenuScreen/return_button.gd" id="10_dpful"]
 
-[node name="TitleScreen" type="Control"]
+[node name="LevelSelectScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2vuhc")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -196,5 +198,9 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="pressed" from="HBoxContainer/Map1" to="." method="_on_map_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/Map2" to="." method="_on_map_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/Map3" to="." method="_on_map_3_pressed"]
+[connection signal="pressed" from="HBoxContainer/Map4" to="." method="_on_map_4_pressed"]
 [connection signal="pressed" from="HBoxContainer2/Return" to="HBoxContainer2/Return" method="_on_pressed"]
 [connection signal="pressed" from="HBoxContainer2/Loadouts" to="HBoxContainer2/Loadouts" method="_on_pressed"]
