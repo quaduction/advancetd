@@ -27,5 +27,5 @@ func eliminated(goon: PathEnemy):
 
 
 func checkWin():
-	if kills > goons:
+	if kills >= goons:
 		level.gameOver(true);
