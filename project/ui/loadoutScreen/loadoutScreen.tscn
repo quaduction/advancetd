@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bvc5gp3nka7re"]
+[gd_scene load_steps=23 format=3 uid="uid://bvc5gp3nka7re"]
 
 [ext_resource type="Texture2D" uid="uid://cagocema6d7e2" path="res://ui/loadoutScreen/assets/background.png" id="1_g44nd"]
 [ext_resource type="Script" uid="uid://c1b6ui8pg5bgu" path="res://ui/loadoutScreen/loadout_screen.gd" id="1_tn1ga"]
@@ -7,11 +7,77 @@
 [ext_resource type="Theme" uid="uid://dvuu2bpdvg5sk" path="res://common/theme.tres" id="4_fkehm"]
 [ext_resource type="FontFile" uid="uid://ddojiyaaeaubi" path="res://common/assets/fonts/PixelifySans-VariableFont_wght.ttf" id="5_4ajb7"]
 [ext_resource type="Texture2D" uid="uid://ceb65qoeqkxcv" path="res://ui/loadoutScreen/assets/towercontainer.png" id="6_4ajb7"]
+[ext_resource type="Shader" uid="uid://bdhgva7y3kqxs" path="res://ui/loadoutScreen/assets/highlight.gdshader" id="7_yckax"]
 [ext_resource type="Texture2D" uid="uid://1yfwy73328sh" path="res://common/assets/textures/sprites/towers/scout.tres" id="8_gvo10"]
 [ext_resource type="Texture2D" uid="uid://bsf07ac4xqe3s" path="res://common/assets/textures/ui/return.png" id="9_54jsq"]
 [ext_resource type="Texture2D" uid="uid://bql0cldft0ypl" path="res://common/assets/textures/ui/returnclick.png" id="10_8bfpf"]
 [ext_resource type="Texture2D" uid="uid://tc8mbwuuejji" path="res://common/assets/textures/ui/returnhover.png" id="11_yckax"]
 [ext_resource type="Script" uid="uid://04v2umocc5p7" path="res://ui/loadoutScreen/return.gd" id="12_8bfpf"]
+[ext_resource type="AudioStream" uid="uid://bq6xmo5hw8gt8" path="res://ui/loadoutScreen/assets/select.wav" id="14_riypo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_edige"]
+shader = ExtResource("7_yckax")
+shader_parameter/size_effect = 7.450599959213378e-08
+shader_parameter/speed = 1.0
+shader_parameter/highlight_strength = 0.5
+shader_parameter/color_mode_toggle = false
+shader_parameter/is_horizontal = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2mags"]
+shader = ExtResource("7_yckax")
+shader_parameter/size_effect = 7.450599959213379e-08
+shader_parameter/speed = 1.0
+shader_parameter/highlight_strength = 0.5
+shader_parameter/color_mode_toggle = false
+shader_parameter/is_horizontal = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bkut1"]
+shader = ExtResource("7_yckax")
+shader_parameter/size_effect = 7.450599959213379e-08
+shader_parameter/speed = 1.0
+shader_parameter/highlight_strength = 0.5
+shader_parameter/color_mode_toggle = false
+shader_parameter/is_horizontal = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e0bd8"]
+shader = ExtResource("7_yckax")
+shader_parameter/size_effect = 7.450599959213379e-08
+shader_parameter/speed = 1.0
+shader_parameter/highlight_strength = 0.5
+shader_parameter/color_mode_toggle = false
+shader_parameter/is_horizontal = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_riypo"]
+shader = ExtResource("7_yckax")
+shader_parameter/size_effect = 7.450599959213379e-08
+shader_parameter/speed = 1.0
+shader_parameter/highlight_strength = 0.5000000670554003
+shader_parameter/color_mode_toggle = false
+shader_parameter/is_horizontal = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yckax"]
+shader = ExtResource("7_yckax")
+shader_parameter/size_effect = 7.450599959213379e-08
+shader_parameter/speed = 1.0
+shader_parameter/highlight_strength = 0.5
+shader_parameter/color_mode_toggle = false
+shader_parameter/is_horizontal = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l7aby"]
+shader = ExtResource("7_yckax")
+shader_parameter/size_effect = 7.450599959213379e-08
+shader_parameter/speed = 1.0
+shader_parameter/highlight_strength = 0.5
+shader_parameter/color_mode_toggle = false
+shader_parameter/is_horizontal = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x1hwi"]
+shader = ExtResource("7_yckax")
+shader_parameter/size_effect = 7.450599959213379e-08
+shader_parameter/speed = 1.0
+shader_parameter/highlight_strength = 0.5
+shader_parameter/color_mode_toggle = false
+shader_parameter/is_horizontal = false
 
 [node name="LoadoutScreen" type="Control"]
 layout_mode = 3
@@ -66,6 +132,7 @@ offset_bottom = 913.0
 theme_override_constants/separation = 16
 
 [node name="Slot1" type="TextureRect" parent="TowerSlots/TowerContainer"]
+material = SubResource("ShaderMaterial_edige")
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 texture = ExtResource("3_xvwby")
@@ -97,6 +164,7 @@ offset_right = 132.0
 offset_bottom = 69.0
 
 [node name="Slot2" type="TextureRect" parent="TowerSlots/TowerContainer"]
+material = SubResource("ShaderMaterial_2mags")
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 texture = ExtResource("3_xvwby")
@@ -128,6 +196,7 @@ offset_right = 132.0
 offset_bottom = 69.0
 
 [node name="Slot3" type="TextureRect" parent="TowerSlots/TowerContainer"]
+material = SubResource("ShaderMaterial_bkut1")
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 texture = ExtResource("3_xvwby")
@@ -159,6 +228,7 @@ offset_right = 132.0
 offset_bottom = 69.0
 
 [node name="Slot4" type="TextureRect" parent="TowerSlots/TowerContainer"]
+material = SubResource("ShaderMaterial_e0bd8")
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 texture = ExtResource("3_xvwby")
@@ -190,6 +260,7 @@ offset_right = 132.0
 offset_bottom = 69.0
 
 [node name="Slot5" type="TextureRect" parent="TowerSlots/TowerContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 texture = ExtResource("3_xvwby")
@@ -221,6 +292,7 @@ offset_right = 132.0
 offset_bottom = 69.0
 
 [node name="Slot6" type="TextureRect" parent="TowerSlots/TowerContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 texture = ExtResource("3_xvwby")
@@ -273,6 +345,7 @@ custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
 [node name="Slot1" type="TextureRect" parent="Shop/ShopContainer/Row1"]
+material = SubResource("ShaderMaterial_riypo")
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
@@ -323,6 +396,7 @@ offset_bottom = 70.0
 texture = ExtResource("8_gvo10")
 
 [node name="Slot2" type="TextureRect" parent="Shop/ShopContainer/Row1"]
+material = SubResource("ShaderMaterial_yckax")
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
@@ -372,6 +446,7 @@ offset_right = 86.0
 offset_bottom = 70.0
 
 [node name="Slot3" type="TextureRect" parent="Shop/ShopContainer/Row1"]
+material = SubResource("ShaderMaterial_l7aby")
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
@@ -425,6 +500,7 @@ custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
 [node name="Slot1" type="TextureRect" parent="Shop/ShopContainer/Row2"]
+material = SubResource("ShaderMaterial_x1hwi")
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
@@ -474,6 +550,7 @@ offset_right = 86.0
 offset_bottom = 70.0
 
 [node name="Slot2" type="TextureRect" parent="Shop/ShopContainer/Row2"]
+material = SubResource("ShaderMaterial_l7aby")
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
@@ -523,6 +600,7 @@ offset_right = 86.0
 offset_bottom = 70.0
 
 [node name="Slot3" type="TextureRect" parent="Shop/ShopContainer/Row2"]
+material = SubResource("ShaderMaterial_l7aby")
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
@@ -576,6 +654,7 @@ custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
 [node name="Slot1" type="TextureRect" parent="Shop/ShopContainer/Row3"]
+material = SubResource("ShaderMaterial_l7aby")
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
@@ -625,6 +704,7 @@ offset_right = 86.0
 offset_bottom = 70.0
 
 [node name="Slot2" type="TextureRect" parent="Shop/ShopContainer/Row3"]
+material = SubResource("ShaderMaterial_l7aby")
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
@@ -674,6 +754,7 @@ offset_right = 86.0
 offset_bottom = 70.0
 
 [node name="Slot3" type="TextureRect" parent="Shop/ShopContainer/Row3"]
+material = SubResource("ShaderMaterial_l7aby")
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
@@ -727,6 +808,7 @@ custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
 [node name="Slot1" type="TextureRect" parent="Shop/ShopContainer/Row4"]
+material = SubResource("ShaderMaterial_l7aby")
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
@@ -776,6 +858,7 @@ offset_right = 86.0
 offset_bottom = 70.0
 
 [node name="Slot2" type="TextureRect" parent="Shop/ShopContainer/Row4"]
+material = SubResource("ShaderMaterial_l7aby")
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
@@ -825,6 +908,7 @@ offset_right = 86.0
 offset_bottom = 70.0
 
 [node name="Slot3" type="TextureRect" parent="Shop/ShopContainer/Row4"]
+material = SubResource("ShaderMaterial_l7aby")
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 texture = ExtResource("6_4ajb7")
@@ -932,5 +1016,8 @@ texture_hover = ExtResource("11_yckax")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("12_8bfpf")
+
+[node name="SelectPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_riypo")
 
 [connection signal="pressed" from="Return" to="Return" method="_on_pressed"]
