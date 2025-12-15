@@ -3,8 +3,11 @@ extends Node;
 # Become Global
 
 var main: Main;
-var states
+var states;
+
 var levelManager: LevelManager;
+var currentLevel: Level;
+
 var menuManager: MenuManager;
 var data: Data;
 
