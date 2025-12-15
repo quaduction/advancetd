@@ -16,8 +16,6 @@ func init(tower: ProjectileTower, target):
 	position = tower.position;
 	direction = (target - position).normalized();
 
-	$DespawnTimer.start();
-
 func _ready() -> void:
 	$DespawnTimer.wait_time = time;
 
@@ -29,7 +27,7 @@ func _on_area_2d_area_entered(area):
 
 	if obj.is_in_group("enemy"):
 		pierce -= 1;
-		obj.get_damage(damage);
+		obj.takeDamage(damage);
 
 	if pierce == 0:
 		queue_free();
