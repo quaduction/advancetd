@@ -56,8 +56,8 @@ func refresh_info_ui():
 	var hpLabel = $TopSheet/Row1/RightRow/HealthLabel;
 	var timeLabel = $TopSheet/Row1/RightRow/TimerLabel;
 
-	balLabel = Game.currentLevel.cash;
-	hpLabel = Game.currentLevel.baseHealth;
+	balLabel.text = "Balance: %d⋔" % Game.currentLevel.cash;
+	hpLabel.text = "Health: %d" % Game.currentLevel.baseHealth;
 
 #
 # Handlers
