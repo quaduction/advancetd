@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbq3b5mcj8vi"]
+
+[ext_resource type="Script" uid="uid://bhg0iaud43y5a" path="res://levels/baseLevel/towerBuilder/tower_builder.gd" id="1_jkxaw"]
+
+[node name="TowerBuilder" type="Node2D"]
+script = ExtResource("1_jkxaw")
