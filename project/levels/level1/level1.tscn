@@ -151,3 +151,21 @@ curve = SubResource("Curve2D_sfwlx")
 
 [node name="CollisionPolygon2D" parent="Obstacles" index="0"]
 polygon = PackedVector2Array(355, 0, 355, 52, 275, 52, 275, 125, 435, 125, 435, 260, 259, 260, 259, 720, 268, 720, 268, 269, 444, 269, 444, 116, 284, 116, 284, 61, 364, 61, 364, 0)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles" index="1"]
+polygon = PackedVector2Array(642, 721, 615, 659, 544, 638, 470, 568, 468, 490, 459, 468, 463, 428, 502, 401, 509, 340, 525, 176, 582, 160, 620, 167, 629, 105, 653, 58, 678, 0, 1278, -2, 1280, 717)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Obstacles" index="2"]
+polygon = PackedVector2Array(0, 698, 206, 639, 195, 410, 173, 268, 73, 177, -1, 160)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Obstacles" index="3"]
+polygon = PackedVector2Array(216, 138, 183, 108, 186, 89, 209, 75, 232, 54, 246, 65, 245, 105)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Obstacles" index="4"]
+polygon = PackedVector2Array(481, 150, 457, 88, 459, 59, 495, 58, 511, 75, 521, 96, 514, 125, 504, 145)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Obstacles" index="5"]
+polygon = PackedVector2Array(389, 197, 344, 152, 350, 137, 402, 139, 420, 157, 423, 183)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Obstacles" index="6"]
+polygon = PackedVector2Array(311, 397, 277, 350, 283, 325, 305, 294, 328, 279, 373, 280, 388, 304, 391, 326)

@@ -28,6 +28,7 @@ var states: Dictionary[State, StateHandler] = {};
 
 @onready var titleMusic := $TitleMusic
 @onready var battleMusic := $BattleMusic
+@onready var pressSfx := $PressPlayer
 
 func _ready():
 	# Uplink to the global autoload
@@ -93,6 +94,7 @@ func transitionStates():
 func changeState(toState: State) -> void:
 	if toState == state: return ;
 
+	pressSfx.play()
 	newState = toState;
 
 func enterLevel(levelName: String):

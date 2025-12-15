@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0c3hvucc3ndc"]
+[gd_scene load_steps=8 format=3 uid="uid://b0c3hvucc3ndc"]
 
 [ext_resource type="Script" uid="uid://8ps41vmjf3ir" path="res://core/Main/main.gd" id="1_4o8at"]
 [ext_resource type="PackedScene" uid="uid://cx5a8mf27h2fm" path="res://core/LevelManager/level_manager.tscn" id="2_kyyci"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://do3bnfvjlvl00" path="res://core/Data/data.tscn" id="4_dlhtc"]
 [ext_resource type="AudioStream" uid="uid://c71nmfyvlees5" path="res://common/assets/audio/music/lostinechoes.mp3" id="5_ywg10"]
 [ext_resource type="AudioStream" uid="uid://bq4fkcsrxexgb" path="res://common/assets/audio/music/madeingehenna.mp3" id="6_fdmuf"]
+[ext_resource type="AudioStream" uid="uid://tuq40n0c7li7" path="res://common/assets/audio/sfx/press.wav" id="7_fdmuf"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_4o8at")
@@ -26,3 +27,7 @@ parameters/looping = true
 stream = ExtResource("6_fdmuf")
 bus = &"Music"
 parameters/looping = true
+
+[node name="PressPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_fdmuf")
+bus = &"Sfx"
