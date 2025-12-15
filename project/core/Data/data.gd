@@ -3,7 +3,7 @@ extends Node;
 
 @export var credits := 100;
 
-const TOWERS := "res://common/data/towers.json";
+const TOWER_DATA := "res://common/data/towers.json";
 var towers: Dictionary = {}
 var towersOwned: Dictionary = {}
 var towersEquipped: Array = [];
@@ -16,7 +16,7 @@ func _ready() -> void:
 func loadTowerDefinitions() -> void:
 	if not towers.is_empty(): return ;
 
-	var file := FileAccess.open(TOWERS, FileAccess.READ);
+	var file := FileAccess.open(TOWER_DATA, FileAccess.READ);
 	var json: Dictionary = JSON.parse_string(file.get_as_text());
 	var tower_array: Array = json["towers"];
 
