@@ -33,6 +33,7 @@ func takeDamage(damage):
 	if hp <= 0:
 		isDestroyed = true;
 
+		get_parent().eliminated(self);
 
 		queue_free();
 
