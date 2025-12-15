@@ -23,10 +23,9 @@ func _process(_delta):
 	if not deployed:
 		checkPlacement();
 	else:
+		try_get_closest_target();
 		if is_instance_valid(currentTarget):
 			look_at(currentTarget.position);
-		else:
-			try_get_closest_target();
 
 
 func setType(typeId: String):
@@ -61,23 +60,22 @@ func try_get_closest_target():
 	var closest = 1000;
 	var closest_area = null;
 	for area in $RangeArea.get_overlapping_areas():
-		var dist = area.position.distance_to(position);
+		var dist = area.global_position.distance_to(global_position);
 		if dist < closest:
 			closest = dist;
 			closest_area = area;
 
 	if closest_area:
 		currentTarget = closest_area.get_parent();
+	else:
+		currentTarget = null;
 
 func _on_cooldown_timeout():
 	if is_instance_valid(currentTarget):
 		attack();
-	else:
-		try_get_closest_target();
 
 func attack():
 	pass ;
-
 
 
 # Utils
