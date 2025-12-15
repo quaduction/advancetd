@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0c3hvucc3ndc"]
+[gd_scene load_steps=7 format=3 uid="uid://b0c3hvucc3ndc"]
 
 [ext_resource type="Script" uid="uid://8ps41vmjf3ir" path="res://core/Main/main.gd" id="1_4o8at"]
 [ext_resource type="PackedScene" uid="uid://cx5a8mf27h2fm" path="res://core/LevelManager/level_manager.tscn" id="2_kyyci"]
 [ext_resource type="PackedScene" uid="uid://42bv50fkdfje" path="res://core/MenuManager/menu_manager.tscn" id="3_dlhtc"]
 [ext_resource type="PackedScene" uid="uid://do3bnfvjlvl00" path="res://core/Data/data.tscn" id="4_dlhtc"]
+[ext_resource type="AudioStream" uid="uid://c71nmfyvlees5" path="res://common/assets/audio/music/lostinechoes.mp3" id="5_ywg10"]
+[ext_resource type="AudioStream" uid="uid://bq4fkcsrxexgb" path="res://common/assets/audio/music/madeingehenna.mp3" id="6_fdmuf"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_4o8at")
@@ -13,3 +15,14 @@ script = ExtResource("1_4o8at")
 [node name="MenuManager" parent="." instance=ExtResource("3_dlhtc")]
 
 [node name="Data" parent="." instance=ExtResource("4_dlhtc")]
+
+[node name="TitleMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ywg10")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="BattleMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_fdmuf")
+bus = &"Music"
+parameters/looping = true

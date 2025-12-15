@@ -26,6 +26,9 @@ var states: Dictionary[State, StateHandler] = {};
 @onready var Data := $Data;
 @warning_ignore_restore("shadowed_global_identifier")
 
+@onready var titleMusic := $TitleMusic
+@onready var battleMusic := $BattleMusic
+
 func _ready():
 	# Uplink to the global autoload
 	Game.main = self;
@@ -95,3 +98,5 @@ func changeState(toState: State) -> void:
 func enterLevel(levelName: String):
 	await LevelManager.playLevel(levelName);
 	changeState(State.LEVEL_PLAY);
+	titleMusic.stop()
+	battleMusic.play()
