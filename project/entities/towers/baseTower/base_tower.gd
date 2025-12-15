@@ -37,7 +37,7 @@ func setType(typeId: String):
 func updateProperties():
 	stats = towerType.levels[tier];
 
-	$CollisionArea.scale = Vector2(stats.size, stats.size);
+	$CollisionArea.scale = Vector2(towerType.size, towerType.size);
 	$RangeArea.scale = Vector2(stats.range, stats.range);
 	$CooldownTimer.wait_time = 1 / stats.firerate;
 
