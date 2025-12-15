@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dthyk3p1ce4mp"]
+
+[ext_resource type="PackedScene" uid="uid://dbtengbg553jk" path="res://entities/towers/projectileTower/projectile_tower.tscn" id="1_3s6xb"]
+[ext_resource type="PackedScene" uid="uid://drkht5jkdqi57" path="res://entities/towers/projectileTower/bullet/base_bullet.tscn" id="2_pc3as"]
+
+[node name="ProjectileTower" instance=ExtResource("1_3s6xb")]
+bullet = ExtResource("2_pc3as")
+towerTypeId = "soldier"
