@@ -50,7 +50,7 @@
     },
     {
       "id": "turret",
-      "name": "Marbakar",
+      "name": "Turret",
       "display_scale": 2.5,
       "credit_price": 400,
       "cash_price": 2200,
