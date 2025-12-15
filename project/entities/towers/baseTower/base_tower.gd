@@ -44,10 +44,10 @@ func updateProperties():
 func checkPlacement():
 	if $CollisionArea.has_overlapping_areas():
 		canPlace = false;
-		$CollisionArea/Highlight.color = Game.consts.highlight.invalid;
+		_highlightCollider("invalid");
 	else:
 		canPlace = true;
-		$CollisionArea/Highlight.color = Game.consts.highlight.valid;
+		_highlightCollider("valid");
 
 func place():
 	if deployed: return ;
@@ -77,3 +77,13 @@ func _on_cooldown_timeout():
 
 func attack():
 	pass ;
+
+
+
+# Utils
+
+func _highlight(colorObject: Node, highType: String):
+	colorObject.color = Game.consts.highlight[highType];
+
+func _highlightCollider(highType: String):
+	_highlight($CollisionArea/Highlight, highType);
