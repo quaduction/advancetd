@@ -4,8 +4,8 @@ extends Node;
 @export var credits := 100;
 
 const TOWER_DATA := "res://common/data/towers.json";
-var towers: Dictionary = {}
-var towersOwned: Dictionary = {}
+var towers: Dictionary = {};
+var towersOwned: Dictionary = {};
 var towersEquipped: Array = [];
 
 func _ready() -> void:
