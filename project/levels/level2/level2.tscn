@@ -142,9 +142,9 @@ point_count = 16
 
 [node name="Level1" instance=ExtResource("1_iktcg")]
 baseHealth = 100
-cash = 200
+cash = 150
 cashFlow = {
-"amount": 25,
+"amount": 50,
 "time": 5
 }
 cahsMult = 10.0

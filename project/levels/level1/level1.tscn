@@ -142,9 +142,9 @@ point_count = 8
 
 [node name="Level1" instance=ExtResource("1_eq150")]
 baseHealth = 25
-cash = 125
+cash = 325
 cashFlow = {
-"amount": 25,
+"amount": 50,
 "time": 5
 }
 cahsMult = 10.0
