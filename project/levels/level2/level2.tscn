@@ -1,8 +1,12 @@
-[gd_scene load_steps=9 format=4 uid="uid://d3af4h4pocvce"]
+[gd_scene load_steps=13 format=4 uid="uid://d3af4h4pocvce"]
 
 [ext_resource type="PackedScene" uid="uid://drlldm3tgt6r0" path="res://levels/baseLevel/base_level.tscn" id="1_iktcg"]
 [ext_resource type="Texture2D" uid="uid://dv2c8xpl2elt5" path="res://core/Maps/tilemap/ground-ee.png" id="2_caq5p"]
 [ext_resource type="Script" uid="uid://qk3hllvhx37g" path="res://levels/level2/path_2d.gd" id="3_5x1h8"]
+[ext_resource type="PackedScene" uid="uid://dug27uw3ymrrr" path="res://entities/enemies/enemy4/enemy4.tscn" id="4_ho0tc"]
+[ext_resource type="PackedScene" uid="uid://brr5j876ec0w5" path="res://entities/enemies/gargouille/gargouille.tscn" id="5_tbwgw"]
+[ext_resource type="PackedScene" uid="uid://p0jum7ruh6jk" path="res://entities/enemies/enemy3/enemy3.tscn" id="6_db1li"]
+[ext_resource type="PackedScene" uid="uid://d1yrinb3h3ojd" path="res://entities/enemies/baseEnemy/base_enemy.tscn" id="7_2xai0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ps0pm"]
 texture = ExtResource("2_caq5p")
@@ -157,6 +161,10 @@ tile_set = SubResource("TileSet_sfwlx")
 [node name="Path2D" parent="." index="3"]
 curve = SubResource("Curve2D_mh2fd")
 script = ExtResource("3_5x1h8")
+enemy_type_1 = ExtResource("4_ho0tc")
+enemy_type_2 = ExtResource("5_tbwgw")
+enemy_type_3 = ExtResource("6_db1li")
+enemy_type_4 = ExtResource("7_2xai0")
 
 [node name="CollisionPolygon2D" parent="Obstacles" index="0"]
 polygon = PackedVector2Array(1279, 222, 1137, 219, 1113, 207, 975, 208, 957, 243, 958, 323, 970, 347, 968, 456, 929, 525, 802, 523, 662, 416, 498, 408, 266, 408, 195, 372, 180, 240, 165, 2, 193, 0, 197, 194, 219, 324, 262, 366, 388, 388, 688, 386, 824, 501, 901, 499, 940, 453, 949, 399, 922, 284, 936, 204, 961, 172, 1120, 179, 1161, 189, 1280, 195)
