@@ -18,7 +18,8 @@ func getBucket(bucketName: String) -> Array:
 func freeBucket(bucketName: String):
 	if sceneBuckets.has(bucketName):
 		for node in sceneBuckets[bucketName]:
-			node.free();
+			unparentNode(node);
+			node.queue_free();
 		sceneBuckets.erase(bucketName);
 
 func addToBucket(bucketName: String, node: Node) -> Node:

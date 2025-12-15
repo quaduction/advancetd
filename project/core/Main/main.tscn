@@ -34,4 +34,5 @@ stream = ExtResource("7_fdmuf")
 bus = &"Sfx"
 
 [node name="Shaders" parent="." instance=ExtResource("8_2t4ga")]
+visible = false
 mouse_filter = 2

@@ -1,5 +1,6 @@
 extends Control
 
+signal fateAccepted();
 
 func _on_return_pressed() -> void:
-	Game.main.changeState(Game.states.MAIN_MENU);
+	fateAccepted.emit();
