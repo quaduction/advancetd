@@ -1019,5 +1019,6 @@ script = ExtResource("12_8bfpf")
 
 [node name="SelectPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_riypo")
+bus = &"Sfx"
 
 [connection signal="pressed" from="Return" to="Return" method="_on_pressed"]

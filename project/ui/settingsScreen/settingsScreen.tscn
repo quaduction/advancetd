@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bysicf1758xei"]
+[gd_scene load_steps=17 format=3 uid="uid://bysicf1758xei"]
 
 [ext_resource type="Texture2D" uid="uid://dbv0xi30bfdsm" path="res://ui/settingsScreen/assets/background.png" id="1_7ncl2"]
 [ext_resource type="Script" uid="uid://c26leimuagsxs" path="res://ui/settingsScreen/settings_screen.gd" id="1_62atm"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cjtlnvnh0lunm" path="res://common/assets/textures/ui/button.png" id="12_72tg2"]
 [ext_resource type="Texture2D" uid="uid://b3qfst3uirwau" path="res://common/assets/textures/ui/buttonclick.png" id="13_2o4oa"]
 [ext_resource type="Texture2D" uid="uid://cx5y11wiid0my" path="res://common/assets/textures/ui/buttonhover.png" id="14_bojyh"]
+[ext_resource type="Script" uid="uid://dnphgd7ebyt3g" path="res://ui/settingsScreen/language.gd" id="15_2o4oa"]
 [ext_resource type="FontFile" uid="uid://ddojiyaaeaubi" path="res://common/assets/fonts/PixelifySans-VariableFont_wght.ttf" id="15_bahvq"]
 
 [node name="SettingsScreen" type="Control"]
@@ -120,6 +121,7 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Language" type="TextureButton" parent="."]
+visible = false
 custom_minimum_size = Vector2(200, 85)
 layout_mode = 0
 offset_left = 559.0
@@ -131,6 +133,7 @@ texture_pressed = ExtResource("13_2o4oa")
 texture_hover = ExtResource("14_bojyh")
 ignore_texture_size = true
 stretch_mode = 4
+script = ExtResource("15_2o4oa")
 
 [node name="LangLabel" type="RichTextLabel" parent="Language"]
 layout_mode = 0
@@ -152,3 +155,4 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="Language" to="Language" method="_on_pressed"]
