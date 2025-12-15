@@ -20,7 +20,7 @@ func startPlacement(tower: Tower) -> void:
 	is_placing = true;
 
 	# Add the tower to the scene so it can follow the mouse
-	# add_child(current_tower);
+	add_child(current_tower);
 
 
 func _process(_delta: float) -> void:
@@ -39,7 +39,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			cancel();
 
 func _attempt_place() -> void:
-	if current_tower.has_variable("canPlace") and current_tower.canPlace:
+	if current_tower.canPlace:
 		is_placing = false;
 
 		# Detach from builder (optional but clean)
