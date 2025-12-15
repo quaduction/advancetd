@@ -9,6 +9,7 @@ size = Vector2(12, 12)
 [node name="BaseEnemy" type="PathFollow2D"]
 loop = false
 script = ExtResource("1_ywybk")
+speed = 0.1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_30qt2")
