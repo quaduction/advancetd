@@ -1,21 +1,17 @@
 extends "res://levels/baseLevel/wave_manager.gd"
 
-@export var enemy_type_1: PackedScene
-@export var enemy_type_2: PackedScene
-@export var enemy_type_3: PackedScene
-@export var enemy_type_4: PackedScene
-
-var spawn_interval := 1.0
-var enemies_to_spawn := []
 
 func _ready():
 	enemies_to_spawn = [
-		enemy_type_1, enemy_type_1, enemy_type_2, 
-		enemy_type_3, enemy_type_4, enemy_type_1, enemy_type_1, enemy_type_2, 
-		enemy_type_3, enemy_type_4, enemy_type_1, enemy_type_1, enemy_type_2, 
-		enemy_type_3, enemy_type_4, enemy_type_1, enemy_type_1, enemy_type_2, 
+		enemy_type_1, enemy_type_1, enemy_type_2,
+		enemy_type_3, enemy_type_4, enemy_type_1, enemy_type_1, enemy_type_2,
+		enemy_type_3, enemy_type_4, enemy_type_1, enemy_type_1, enemy_type_2,
+		enemy_type_3, enemy_type_4, enemy_type_1, enemy_type_1, enemy_type_2,
 		enemy_type_3, enemy_type_4
 	]
+
+	super();
+	
 	start_wave()
 
 func start_wave():
