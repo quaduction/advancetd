@@ -35,7 +35,7 @@ func setType(typeId: String):
 	updateProperties();
 
 func updateProperties():
-	stats = towerType[tier];
+	stats = towerType.levels[tier];
 
 	$CollisionArea.scale = Vector2(stats.size, stats.size);
 	$RangeArea.scale = Vector2(stats.range, stats.range);
