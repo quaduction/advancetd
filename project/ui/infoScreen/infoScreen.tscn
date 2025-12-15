@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbrkfcga43e0l"]
+[gd_scene load_steps=10 format=3 uid="uid://bbrkfcga43e0l"]
 
 [ext_resource type="Texture2D" uid="uid://dbv0xi30bfdsm" path="res://ui/settingsScreen/assets/background.png" id="1_fi64q"]
 [ext_resource type="Script" uid="uid://b8lypwv2axc1j" path="res://ui/infoScreen/info_screen.gd" id="1_gm57l"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bsf07ac4xqe3s" path="res://common/assets/textures/ui/return.png" id="4_fwfmb"]
 [ext_resource type="Texture2D" uid="uid://bql0cldft0ypl" path="res://common/assets/textures/ui/returnclick.png" id="5_gm57l"]
 [ext_resource type="Texture2D" uid="uid://tc8mbwuuejji" path="res://common/assets/textures/ui/returnhover.png" id="6_lhv7d"]
+[ext_resource type="Theme" uid="uid://dvuu2bpdvg5sk" path="res://common/theme.tres" id="8_5ftix"]
+[ext_resource type="FontFile" uid="uid://ddojiyaaeaubi" path="res://common/assets/fonts/PixelifySans-VariableFont_wght.ttf" id="9_2nnod"]
 
 [node name="InfoScreen" type="Control"]
 layout_mode = 3
@@ -57,5 +59,23 @@ texture_pressed = ExtResource("5_gm57l")
 texture_hover = ExtResource("6_lhv7d")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 192.0
+offset_right = 851.0
+offset_bottom = 226.0
+mouse_filter = 1
+theme = ExtResource("8_5ftix")
+theme_override_fonts/normal_font = ExtResource("9_2nnod")
+theme_override_fonts/bold_font = ExtResource("9_2nnod")
+theme_override_fonts/bold_italics_font = ExtResource("9_2nnod")
+theme_override_fonts/italics_font = ExtResource("9_2nnod")
+theme_override_fonts/mono_font = ExtResource("9_2nnod")
+theme_override_font_sizes/normal_font_size = 25
+text = "Créé par Sean Larry Driesen & William Briand"
+fit_content = true
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

@@ -14,17 +14,17 @@ shader_parameter/roll = true
 shader_parameter/roll_speed = 1.2
 shader_parameter/roll_size = 0.800000038
 shader_parameter/roll_variation = 4.00000018674012
-shader_parameter/distort_intensity = 0.05
-shader_parameter/noise_opacity = 0.2000000095
+shader_parameter/distort_intensity = 0.010000000475
+shader_parameter/noise_opacity = 0.010000000475
 shader_parameter/noise_speed = 10.0
-shader_parameter/static_noise_intensity = 0.06
+shader_parameter/static_noise_intensity = 0.010000000475
 shader_parameter/aberration = 0.010000047974999982
 shader_parameter/brightness = 2.0
 shader_parameter/discolor = true
 shader_parameter/warp_amount = 1.0
 shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/vignette_opacity = 1.0
+shader_parameter/vignette_intensity = 0.2
+shader_parameter/vignette_opacity = 0.50000002375
 
 [node name="Shaders" type="Control"]
 layout_mode = 3
@@ -35,6 +35,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CRT" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_605c0")
 layout_mode = 0
 offset_right = 1283.0

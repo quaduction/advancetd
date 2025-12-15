@@ -1,7 +1,12 @@
-[gd_scene load_steps=8 format=4 uid="uid://c1uf1e5tlahem"]
+[gd_scene load_steps=13 format=4 uid="uid://c1uf1e5tlahem"]
 
 [ext_resource type="PackedScene" uid="uid://drlldm3tgt6r0" path="res://levels/baseLevel/base_level.tscn" id="1_eq150"]
 [ext_resource type="Texture2D" uid="uid://dv2c8xpl2elt5" path="res://core/Maps/tilemap/ground-ee.png" id="2_c6lro"]
+[ext_resource type="Script" uid="uid://byefg12o8tdwh" path="res://levels/level1/path_2d.gd" id="3_ps0pm"]
+[ext_resource type="PackedScene" uid="uid://dug27uw3ymrrr" path="res://entities/enemies/enemy4/enemy4.tscn" id="3_tysf0"]
+[ext_resource type="PackedScene" uid="uid://brr5j876ec0w5" path="res://entities/enemies/gargouille/gargouille.tscn" id="4_3jy00"]
+[ext_resource type="PackedScene" uid="uid://p0jum7ruh6jk" path="res://entities/enemies/enemy3/enemy3.tscn" id="5_8yb7b"]
+[ext_resource type="PackedScene" uid="uid://d1yrinb3h3ojd" path="res://entities/enemies/baseEnemy/base_enemy.tscn" id="6_gw1fo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ps0pm"]
 texture = ExtResource("2_c6lro")
@@ -63,7 +68,7 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_aatsp"]
 sources/3 = SubResource("TileSetAtlasSource_ps0pm")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aatsp"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c6lro"]
 texture = ExtResource("2_c6lro")
 0:0/0 = 0
 1:0/0 = 0
@@ -127,7 +132,7 @@ texture = ExtResource("2_c6lro")
 5:7/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_sfwlx"]
-sources/2 = SubResource("TileSetAtlasSource_aatsp")
+sources/2 = SubResource("TileSetAtlasSource_c6lro")
 
 [sub_resource type="Curve2D" id="Curve2D_sfwlx"]
 _data = {
@@ -148,6 +153,11 @@ tile_set = SubResource("TileSet_sfwlx")
 
 [node name="Path2D" parent="." index="3"]
 curve = SubResource("Curve2D_sfwlx")
+script = ExtResource("3_ps0pm")
+enemy_type_1 = ExtResource("5_8yb7b")
+enemy_type_2 = ExtResource("6_gw1fo")
+enemy_type_3 = ExtResource("4_3jy00")
+enemy_type_4 = ExtResource("3_tysf0")
 
 [node name="CollisionPolygon2D" parent="Obstacles" index="0"]
 polygon = PackedVector2Array(355, 0, 355, 52, 275, 52, 275, 125, 435, 125, 435, 260, 259, 260, 259, 720, 268, 720, 268, 269, 444, 269, 444, 116, 284, 116, 284, 61, 364, 61, 364, 0)

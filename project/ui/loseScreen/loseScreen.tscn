@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://ceqj745wxajen"]
+
+[ext_resource type="Script" uid="uid://d3q7ifp4pbhi3" path="res://ui/loseScreen/lose_screen.gd" id="1_d4rix"]
+[ext_resource type="Texture2D" uid="uid://dbv0xi30bfdsm" path="res://ui/settingsScreen/assets/background.png" id="2_qmy5n"]
+[ext_resource type="Texture2D" uid="uid://ruyhc0gb3c8t" path="res://common/assets/textures/ui/title.png" id="3_3f2fr"]
+[ext_resource type="Texture2D" uid="uid://b2yppsybmku8t" path="res://common/assets/textures/ui/rectangle.png" id="4_u5s0r"]
+[ext_resource type="Texture2D" uid="uid://bsf07ac4xqe3s" path="res://common/assets/textures/ui/return.png" id="5_aew7d"]
+[ext_resource type="Texture2D" uid="uid://bql0cldft0ypl" path="res://common/assets/textures/ui/returnclick.png" id="6_qbf45"]
+[ext_resource type="Texture2D" uid="uid://tc8mbwuuejji" path="res://common/assets/textures/ui/returnhover.png" id="7_pxv5i"]
+[ext_resource type="Theme" uid="uid://dvuu2bpdvg5sk" path="res://common/theme.tres" id="8_vmomi"]
+[ext_resource type="FontFile" uid="uid://ddojiyaaeaubi" path="res://common/assets/fonts/PixelifySans-VariableFont_wght.ttf" id="9_bm7hi"]
+
+[node name="InfoScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d4rix")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -3.0
+offset_right = 1279.0
+offset_bottom = 720.0
+texture = ExtResource("2_qmy5n")
+expand_mode = 2
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 29.0
+offset_right = 897.0
+offset_bottom = 124.0
+texture = ExtResource("3_3f2fr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 155.0
+offset_right = 927.0
+offset_bottom = 556.0
+texture = ExtResource("4_u5s0r")
+expand_mode = 1
+
+[node name="Return" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 0
+offset_left = 35.0
+offset_top = 592.0
+offset_right = 122.0
+offset_bottom = 677.0
+texture_normal = ExtResource("5_aew7d")
+texture_pressed = ExtResource("6_qbf45")
+texture_hover = ExtResource("7_pxv5i")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 345.0
+offset_right = 855.0
+offset_bottom = 379.0
+mouse_filter = 1
+theme = ExtResource("8_vmomi")
+theme_override_fonts/normal_font = ExtResource("9_bm7hi")
+theme_override_fonts/bold_font = ExtResource("9_bm7hi")
+theme_override_fonts/bold_italics_font = ExtResource("9_bm7hi")
+theme_override_fonts/italics_font = ExtResource("9_bm7hi")
+theme_override_fonts/mono_font = ExtResource("9_bm7hi")
+theme_override_font_sizes/normal_font_size = 25
+text = "Defeat"
+fit_content = true
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
