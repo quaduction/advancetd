@@ -1,11 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b41k1woy328xx"]
+[gd_scene load_steps=4 format=3 uid="uid://b41k1woy328xx"]
 
 [ext_resource type="PackedScene" uid="uid://drlldm3tgt6r0" path="res://levels/baseLevel/base_level.tscn" id="1_hydoq"]
 [ext_resource type="PackedScene" uid="uid://d1yrinb3h3ojd" path="res://entities/enemies/baseEnemy/base_enemy.tscn" id="2_bex14"]
-[ext_resource type="Texture2D" uid="uid://bsf07ac4xqe3s" path="res://common/assets/textures/ui/return.png" id="2_xvip4"]
-[ext_resource type="Texture2D" uid="uid://bql0cldft0ypl" path="res://common/assets/textures/ui/returnclick.png" id="3_bex14"]
-[ext_resource type="Texture2D" uid="uid://tc8mbwuuejji" path="res://common/assets/textures/ui/returnhover.png" id="4_1am58"]
-[ext_resource type="Script" uid="uid://dxowgcdbe7qb5" path="res://levels/debugLevel/placer.gd" id="5_vls1d"]
 
 [sub_resource type="Curve2D" id="Curve2D_hydoq"]
 _data = {
@@ -25,18 +21,3 @@ scale = Vector2(3.075, 3.075)
 
 [node name="CollisionPolygon2D" parent="Obstacles" index="0"]
 polygon = PackedVector2Array(421, 281, 418, 495, 526, 493, 524, 343, 586, 343, 588, 495, 659, 493, 654, 337, 899, 337, 899, 483, 1008, 483, 1004, 255, 774, 255, 772, 99, 712, 101, 701, 260)
-
-[node name="Placer" type="TextureButton" parent="." index="5"]
-custom_minimum_size = Vector2(0, 85)
-offset_left = 28.0
-offset_top = 599.0
-offset_right = 115.0
-offset_bottom = 684.0
-texture_normal = ExtResource("2_xvip4")
-texture_pressed = ExtResource("3_bex14")
-texture_hover = ExtResource("4_1am58")
-ignore_texture_size = true
-stretch_mode = 5
-script = ExtResource("5_vls1d")
-
-[connection signal="pressed" from="Placer" to="Placer" method="_on_pressed"]

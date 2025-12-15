@@ -1,5 +1,5 @@
+class_name PathEnemy;
 extends PathFollow2D;
-
 
 var cashYield := 10;
 var hp := 10.0;
@@ -21,7 +21,7 @@ func pathFinished():
 	if isDestroyed: return ;
 	isDestroyed = true;
 
-	print("Damaged base for ", baseDamage);
+	get_parent().reachedBase(self);
 
 	queue_free();
 

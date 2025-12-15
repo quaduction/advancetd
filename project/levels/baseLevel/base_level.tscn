@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://drlldm3tgt6r0"]
+[gd_scene load_steps=4 format=3 uid="uid://drlldm3tgt6r0"]
 
 [ext_resource type="Script" uid="uid://bxbprmb1ucytw" path="res://levels/baseLevel/base_level.gd" id="1_5rswj"]
 [ext_resource type="PackedScene" uid="uid://cbq3b5mcj8vi" path="res://levels/baseLevel/towerBuilder/tower_builder.tscn" id="1_aomoa"]
+[ext_resource type="Script" uid="uid://d0dde43xin175" path="res://levels/baseLevel/wave_manager.gd" id="2_tr8st"]
 
 [node name="BaseLevel" type="Node2D"]
 script = ExtResource("1_5rswj")
@@ -9,6 +10,7 @@ script = ExtResource("1_5rswj")
 [node name="Background" type="Sprite2D" parent="."]
 
 [node name="Path2D" type="Path2D" parent="."]
+script = ExtResource("2_tr8st")
 
 [node name="Obstacles" type="Area2D" parent="."]
 
@@ -17,3 +19,8 @@ script = ExtResource("1_5rswj")
 [node name="TowerBuilder" parent="." instance=ExtResource("1_aomoa")]
 
 [node name="Projectiles" type="Node2D" parent="."]
+
+[node name="SalaryTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="SalaryTimer" to="." method="_on_salary_timer_timeout"]
