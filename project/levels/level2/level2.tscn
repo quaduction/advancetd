@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://d3af4h4pocvce"]
+[gd_scene load_steps=9 format=4 uid="uid://d3af4h4pocvce"]
 
 [ext_resource type="PackedScene" uid="uid://drlldm3tgt6r0" path="res://levels/baseLevel/base_level.tscn" id="1_iktcg"]
 [ext_resource type="Texture2D" uid="uid://dv2c8xpl2elt5" path="res://core/Maps/tilemap/ground-ee.png" id="2_caq5p"]
+[ext_resource type="Script" uid="uid://qk3hllvhx37g" path="res://levels/level2/path_2d.gd" id="3_5x1h8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ps0pm"]
 texture = ExtResource("2_caq5p")
@@ -136,6 +137,13 @@ _data = {
 point_count = 16
 
 [node name="Level1" instance=ExtResource("1_iktcg")]
+baseHealth = 100
+cash = 200
+cashFlow = {
+"amount": 25,
+"time": 5
+}
+cahsMult = 10.0
 
 [node name="TileMapLayer1" type="TileMapLayer" parent="." index="1"]
 visible = false
@@ -148,6 +156,11 @@ tile_set = SubResource("TileSet_sfwlx")
 
 [node name="Path2D" parent="." index="3"]
 curve = SubResource("Curve2D_mh2fd")
+script = ExtResource("3_5x1h8")
+enemy_type_1 = null
+enemy_type_2 = null
+enemy_type_3 = null
+enemy_type_4 = null
 
 [node name="CollisionPolygon2D" parent="Obstacles" index="0"]
 polygon = PackedVector2Array(1279, 222, 1137, 219, 1113, 207, 975, 208, 957, 243, 958, 323, 970, 347, 968, 456, 929, 525, 802, 523, 662, 416, 498, 408, 266, 408, 195, 372, 180, 240, 165, 2, 193, 0, 197, 194, 219, 324, 262, 366, 388, 388, 688, 386, 824, 501, 901, 499, 940, 453, 949, 399, 922, 284, 936, 204, 961, 172, 1120, 179, 1161, 189, 1280, 195)
