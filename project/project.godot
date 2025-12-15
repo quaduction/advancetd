@@ -35,8 +35,8 @@ window/stretch/mode="canvas_items"
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://common/assets/lang/lang.po")
-locale/translations_pot_files=PackedStringArray("res://UI/loadoutScreen/loadoutScreen.tscn", "res://UI/settingsScreen/settingsScreen.tscn", "res://UI/titleScreen/titleScreen.tscn")
+locale/translations=PackedStringArray("res://common/assets/lang/fr.po")
+locale/translations_pot_files=PackedStringArray("res://UI/loadoutScreen/loadoutScreen.tscn", "res://UI/settingsScreen/settingsScreen.tscn", "res://UI/titleScreen/titleScreen.tscn", "res://ui/gameMenuScreen/gameMenuScreen.tscn", "res://ui/hud/hud.tscn", "res://ui/infoScreen/infoScreen.tscn", "res://ui/startupScreen/startup_screen.tscn", "res://ui/titleScreen/titleScreen.tscn")
 
 [layer_names]
 
