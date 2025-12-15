@@ -4,7 +4,7 @@ extends Node2D;
 var current_tower: Tower = null;
 var is_placing: bool = false;
 
-signal placementEnd(success: bool, tower: Tower);
+signal placementEnd(success: bool);
 
 
 func place(tower: Tower) -> bool:
@@ -50,7 +50,7 @@ func _attempt_place() -> void:
 			current_tower.place();
 
 		# Announce successful placement
-		placementEnd.emit(true, current_tower);
+		placementEnd.emit(true);
 
 		current_tower = null;
 		
@@ -58,7 +58,7 @@ func cancel() -> void:
 	if current_tower: current_tower.queue_free();
 
 	# Announce unsuccessful placement
-	placementEnd.emit(false, current_tower);
+	placementEnd.emit(false);
 
 	current_tower = null;
 	is_placing = false;

@@ -87,7 +87,11 @@ func handle_loadout_click(slot):
 		return
 
 	var tower = load("res://entities/towers/%s/%s.tscn" % [id, id]).instantiate();
-	Game.currentLevel.towerBuilder.startPlacement(tower);
+	
+	var placed = await Game.currentLevel.towerBuilder.place(tower);
+
+	if placed:
+		Game.currentLevel.cash -= Game.data.towers[id].cash_price;
 
 #
 # Utils

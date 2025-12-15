@@ -2,7 +2,7 @@ class_name Bullet;
 extends Node2D;
 
 
-@export var speed: float = 400.0;
+@export var speed: float = 800.0;
 @export var pierce: int = 1;
 @export var time: float = 1.0;
 
