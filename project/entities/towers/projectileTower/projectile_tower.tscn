@@ -1,8 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbtengbg553jk"]
+[gd_scene load_steps=5 format=3 uid="uid://dbtengbg553jk"]
 
 [ext_resource type="PackedScene" uid="uid://h0nbm0lauiyu" path="res://entities/towers/baseTower/base_tower.tscn" id="1_tkrio"]
 [ext_resource type="Script" uid="uid://cm41436uvnjtl" path="res://entities/towers/projectileTower/projectile_tower.gd" id="2_0nbbb"]
+[ext_resource type="PackedScene" uid="uid://drkht5jkdqi57" path="res://entities/towers/projectileTower/bullet/base_bullet.tscn" id="3_4f870"]
+[ext_resource type="AudioStream" uid="uid://cictu7kub33g0" path="res://common/assets/audio/sfx/shoot.wav" id="4_gsotb"]
 
 [node name="ProjectileTower" instance=ExtResource("1_tkrio")]
 script = ExtResource("2_0nbbb")
-towerTypeId = null
+bullet = ExtResource("3_4f870")
+
+[node name="shoot" type="AudioStreamPlayer" parent="." index="4"]
+stream = ExtResource("4_gsotb")
+bus = &"Sfx"
