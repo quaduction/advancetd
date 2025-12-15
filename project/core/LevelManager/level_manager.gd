@@ -43,6 +43,7 @@ func _on_level_end(won):
 	var screen;
 	if won:
 		screen = "res://ui/winScreen/winScreen.tscn";
+		Game.data.credits += currentLevel.creditsReward;
 	else: 
 		screen = "res://ui/loseScreen/loseScreen.tscn";
 
