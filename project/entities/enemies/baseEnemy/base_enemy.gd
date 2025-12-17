@@ -1,6 +1,9 @@
 class_name PathEnemy;
 extends PathFollow2D;
 
+signal reachedBase(me: PathEnemy);
+signal eliminated(me: PathEnemy);
+
 @export var cashYield := 10;
 @export var hp := 10.0;
 @export var baseDamage := 5;
@@ -21,9 +24,7 @@ func pathFinished():
 	if isDestroyed: return ;
 	isDestroyed = true;
 
-	get_parent().reachedBase(self);
-
-	queue_free();
+	reachedBase.emit(self);
 
 func takeDamage(damage):
 	if isDestroyed: return ;
@@ -33,7 +34,7 @@ func takeDamage(damage):
 	if hp <= 0:
 		isDestroyed = true;
 
-		get_parent().eliminated(self);
+		eliminated.emit(self);
 
 		queue_free();
 
