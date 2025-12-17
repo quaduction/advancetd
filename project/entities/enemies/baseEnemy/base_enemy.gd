@@ -3,7 +3,7 @@ extends PathFollow2D;
 
 @export var cashYield := 10;
 @export var hp := 10.0;
-@export var baseDamage := 5.0;
+@export var baseDamage := 5;
 @export var speed := 1.0;
 var isDestroyed := false;
 
