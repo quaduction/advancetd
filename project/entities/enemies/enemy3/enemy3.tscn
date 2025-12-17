@@ -5,10 +5,7 @@
 
 [node name="BaseEnemy" instance=ExtResource("1_kr8g8")]
 hp = 15.0
-baseDamage = 10.0
 speed = 0.7
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_6erkw")
-region_enabled = true
-region_rect = Rect2(0, 32, 32, 32)
