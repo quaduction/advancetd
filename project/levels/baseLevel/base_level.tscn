@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://drlldm3tgt6r0"]
+[gd_scene load_steps=5 format=3 uid="uid://drlldm3tgt6r0"]
 
 [ext_resource type="Script" uid="uid://bxbprmb1ucytw" path="res://levels/baseLevel/base_level.gd" id="1_5rswj"]
 [ext_resource type="PackedScene" uid="uid://cbq3b5mcj8vi" path="res://levels/baseLevel/towerBuilder/tower_builder.tscn" id="1_aomoa"]
 [ext_resource type="Script" uid="uid://d0dde43xin175" path="res://levels/baseLevel/wave_manager.gd" id="2_tr8st"]
+[ext_resource type="PackedScene" uid="uid://c458ro8efiqk0" path="res://levels/baseLevel/panCamera/pan_camera.tscn" id="4_p0jc1"]
 
 [node name="BaseLevel" type="Node2D"]
 script = ExtResource("1_5rswj")
@@ -22,5 +23,7 @@ script = ExtResource("2_tr8st")
 
 [node name="SalaryTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="PanCamera" parent="." instance=ExtResource("4_p0jc1")]
 
 [connection signal="timeout" from="SalaryTimer" to="." method="_on_salary_timer_timeout"]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c458ro8efiqk0"]
+
+[ext_resource type="Script" uid="uid://o7ld7utqok31" path="res://levels/baseLevel/panCamera/pan_camera.gd" id="1_vpaon"]
+
+[node name="PanCamera" type="Camera2D"]
+anchor_mode = 0
+script = ExtResource("1_vpaon")

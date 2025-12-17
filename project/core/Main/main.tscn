@@ -14,7 +14,9 @@ script = ExtResource("1_4o8at")
 
 [node name="LevelManager" parent="." instance=ExtResource("2_kyyci")]
 
-[node name="MenuManager" parent="." instance=ExtResource("3_dlhtc")]
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="MenuManager" parent="UILayer" instance=ExtResource("3_dlhtc")]
 
 [node name="Data" parent="." instance=ExtResource("4_dlhtc")]
 

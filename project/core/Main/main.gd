@@ -22,7 +22,7 @@ var states: Dictionary[State, StateHandler] = {};
 
 @warning_ignore_start("shadowed_global_identifier")
 @onready var LevelManager := $LevelManager;
-@onready var MenuManager := $MenuManager;
+@onready var MenuManager := $UILayer/MenuManager;
 @onready var Data := $Data;
 @warning_ignore_restore("shadowed_global_identifier")
 
