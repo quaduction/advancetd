@@ -25,7 +25,7 @@ func _process(_delta):
 	else:
 		try_get_closest_target();
 		if is_instance_valid(currentTarget):
-			look_at(currentTarget.position);
+			look_at(currentTarget.global_position);
 
 
 func setType(typeId: String):
@@ -67,9 +67,12 @@ func try_get_closest_target():
 			closest_area = area;
 
 	if closest_area:
-		currentTarget = closest_area.get_parent();
-	else:
-		currentTarget = null;
+		var target = closest_area.get_parent();
+		if target.is_in_group("enemy"):
+			currentTarget = target;
+			return;
+
+	currentTarget = null;
 
 func _on_cooldown_timeout():
 	if is_instance_valid(currentTarget):
