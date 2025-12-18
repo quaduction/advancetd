@@ -1,5 +1,5 @@
 # LANGUAGE translation for advancetd for the following files:
-# res://ui/loadoutScreen/loadoutScreen.tscn
+# res://ui/infoScreen/infoScreen.tscn
 #
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -11,22 +11,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: ui/loadoutScreen/loadoutScreen.tscn
-msgid "Tower Slots"
+#: ui/infoScreen/infoScreen.tscn
+msgid "Sean Larry Driesen & William Briand"
 msgstr ""
 
-#: ui/loadoutScreen/loadoutScreen.tscn
-msgid "Tower"
+#: ui/infoScreen/infoScreen.tscn
+msgid "Map backgrounds from the Etigei Exile mod for Mindustry"
 msgstr ""
 
-#: ui/loadoutScreen/loadoutScreen.tscn
-msgid "Price"
-msgstr ""
-
-#: ui/loadoutScreen/loadoutScreen.tscn
-msgid "[color=green]Terminal[/color]"
-msgstr ""
-
-#: ui/loadoutScreen/loadoutScreen.tscn
-msgid "Balance: 0"
+#: ui/infoScreen/infoScreen.tscn
+msgid ""
+"Controls\n"
+"\n"
+"Click to select, place.\n"
+"Scroll to zoom in/out."
 msgstr ""

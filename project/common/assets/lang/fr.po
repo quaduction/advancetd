@@ -110,6 +110,10 @@ msgid ""
 "Scroll to zoom in/out."
 msgstr "Commandes Cliquez pour sélectionner, placer. Faites défiler pour zoomer/dézoomer."
 
+#: ui/infoScreen/infoScreen.tscn
+msgid "Map backgrounds from the Etigei Exile mod for Mindustry"
+msgstr "Arrière-plans de missions issus du mod Etigei Exile pour Mindustry"
+
 #: ui/startupScreen/startup_screen.tscn
 msgid "Game Starting..."
 msgstr "Chargement..."
