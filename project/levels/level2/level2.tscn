@@ -107,10 +107,10 @@ point_count = 16
 baseHealth = 100
 cash = 150
 cashFlow = {
-"amount": 50,
+"amount": 5,
 "time": 5
 }
-cahsMult = 10.0
+cahsMult = 5.0
 
 [node name="TileMapLayer1" type="TileMapLayer" parent="." index="1"]
 visible = false

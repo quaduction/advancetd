@@ -114,10 +114,10 @@ point_count = 18
 baseHealth = 125
 cash = 400
 cashFlow = {
-"amount": 50,
+"amount": 20,
 "time": 5
 }
-cahsMult = 10.0
+cahsMult = 5.0
 creditsReward = 220
 
 [node name="TileMapLayer1" type="TileMapLayer" parent="." index="1"]
