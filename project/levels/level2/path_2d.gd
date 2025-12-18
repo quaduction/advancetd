@@ -1,6 +1,5 @@
 extends "res://levels/baseLevel/wave_manager.gd"
 
-
 func _ready():
 	wave_delay = 10.0;
 	initial_wave_delay = 3.0;

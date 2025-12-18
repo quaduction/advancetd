@@ -37,11 +37,11 @@
       "name": "Sentry",
       "display_scale": 3,
       "credit_price": 120,
-      "cash_price": 700,
+      "cash_price": 375,
       "size": 2,
       "levels": [
         {
-          "range": 30,
+          "range": 20,
           "damage": 5,
           "firerate": 10,
           "upgrade_price": 2000
@@ -53,7 +53,7 @@
       "name": "Turret",
       "display_scale": 2.5,
       "credit_price": 400,
-      "cash_price": 2000,
+      "cash_price": 800,
       "size": 4,
       "levels": [
         {

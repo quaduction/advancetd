@@ -1,8 +1,5 @@
 extends "res://levels/baseLevel/wave_manager.gd"
 
-const WAVE_DELAY := 7.5
-const INITIAL_WAVE_DELAY := 3.0
-
 func _ready():
 	wave_delay = 7.5;
 	initial_wave_delay = 3.0;

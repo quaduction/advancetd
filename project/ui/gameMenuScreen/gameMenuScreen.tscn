@@ -488,6 +488,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAgAEAAcAAAAAAAEAAgAEAAcAAAAAAAIAAgAEAAc
 tile_set = SubResource("TileSet_evpqg")
 
 [node name="Map5" type="TextureButton" parent="."]
+visible = false
 custom_minimum_size = Vector2(200, 85)
 layout_mode = 0
 offset_left = 992.0
