@@ -106,7 +106,11 @@ point_count = 12
 [node name="Level3" instance=ExtResource("1_fats8")]
 baseHealth = 100
 cash = 100
-cahsMult = 3.0
+cashFlow = {
+"amount": 50,
+"time": 5
+}
+cahsMult = 10.0
 
 [node name="TileMapLayer1" type="TileMapLayer" parent="." index="1"]
 visible = false
