@@ -19,7 +19,7 @@ func _ready() -> void:
 	connect_tower_slots();
 	refresh_ui();
 
-	show_message("[color=gray]Click a tower to purchase or select. Then click a slot to equip.[/color]");
+	show_message("[color=gray]%s[/color]" % tr("Click a tower to purchase or select. Then click a slot to equip."));
 
 # 
 # UI Refresh
@@ -31,7 +31,7 @@ func refresh_ui() -> void:
 	refresh_terminal();
 
 func refresh_terminal() -> void:
-	terminal_balance.text = "Balance: [color=gold]%d£[/color]" % Game.data.credits;
+	terminal_balance.text = tr("Balance: %d£") % Game.data.credits;
 
 func refresh_shop_ui() -> void:
 	var tower_ids := Game.data.towers.keys();
@@ -56,9 +56,9 @@ func refresh_shop_ui() -> void:
 			name_label.text = Game.data.towers[id].name;
 
 			if Game.data.towersOwned[id]:
-				price_label.text = "Owned";
+				price_label.text = tr("Owned");
 			else:
-				price_label.text = "%d£" % Game.data.towers[id].credit_price;
+				price_label.text = tr("%d£") % Game.data.towers[id].credit_price;
 
 			apply_tower_icon(icon, id);
 
@@ -153,19 +153,19 @@ func handle_shop_click(slot) -> void:
 
 	if Game.data.towersOwned[id]:
 		selected_tower = id;
-		show_message("[color=gray]Selected %s[/color]" % Game.data.towers[id].name);
+		show_message("[color=gray]%s[/color]" % tr("Selected %s") % Game.data.towers[id].name);
 		return ;
 
 	var price: int = Game.data.towers[id].credit_price;
 	if Game.data.credits < price:
-		show_message("[color=red]Not enough balance[/color]");
+		show_message("[color=red]%s[/color]" % tr("Not enough balance"));
 		return ;
 
 	Game.data.credits -= price;
 	Game.data.towersOwned[id] = true;
 	selected_tower = id;
 
-	show_message("[color=gray]Purchased %s[/color]" % Game.data.towers[id].name);
+	show_message("[color=gray]%s[/color]" % tr("Purchased %s") % Game.data.towers[id].name);
 	refresh_ui();
 
 func handle_tower_slot_click(slot) -> void:
@@ -173,26 +173,27 @@ func handle_tower_slot_click(slot) -> void:
 		var id: String = Game.data.towersEquipped[slot]
 		Game.data.towersEquipped[slot] = null;
 
-		show_message("[color=gray]Removed %s[/color]" % Game.data.towers[id].name);
+		show_message("[color=gray]%s[/color]" % tr("Removed %s") % Game.data.towers[id].name);
 		refresh_tower_slots_ui();
 		return ;
 
 	if selected_tower == "":
-		show_message("[color=yellow]No tower selected[/color]");
+		show_message("[color=yellow]%s[/color]" % tr("No tower selected"));
 		return ;
 
 	if not Game.data.towersOwned[selected_tower]:
-		show_message("[color=red]Tower not owned[/color]");
+		show_message("[color=red]%s[/color]" % tr("Tower not owned"));
 		return ;
 
 	if Game.data.towersEquipped.has(selected_tower):
 		show_message(
-			"[color=orange]%s is already equipped[/color]"
+			"[color=orange]%s[/color]"
+			% tr("%s is already equipped")
 			% Game.data.towers[selected_tower].name
 		);
 		return ;
 
 	Game.data.towersEquipped[slot] = selected_tower;
 
-	show_message("[color=gray]Equipped %s[/color]" % Game.data.towers[selected_tower].name);
+	show_message("[color=gray]%s[/color]" % tr("Equipped %s") % Game.data.towers[selected_tower].name);
 	refresh_tower_slots_ui();

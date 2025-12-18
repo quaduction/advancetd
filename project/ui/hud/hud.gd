@@ -44,9 +44,9 @@ func refresh_loadout_bar_ui() -> void:
 			name_label.text = Game.data.towers[id].name;
 
 			var price = Game.data.towers[id].cash_price;
-			price_label.text = "[color=%s]$%d[/color]" % [
+			price_label.text = "[color=%s]%s[/color]" % [
 				"white" if price < Game.currentLevel.cash else "red",
-				price
+				tr("$%d") % price
 			];
 			slot.modulate.a = 1;
 			apply_tower_icon(icon, id);
@@ -57,8 +57,8 @@ func refresh_info_ui():
 	var hpLabel = $TopSheet/Row1/RightRow/HealthLabel;
 	var timeLabel = $TopSheet/Row1/RightRow/TimerLabel;
 
-	balLabel.text = "Balance: %d$" % Game.currentLevel.cash;
-	hpLabel.text = "Health: %d" % Game.currentLevel.baseHealth;
+	balLabel.text = tr("Balance: %d$") % Game.currentLevel.cash;
+	hpLabel.text = tr("Health: %d") % Game.currentLevel.baseHealth;
 
 #
 # Handlers

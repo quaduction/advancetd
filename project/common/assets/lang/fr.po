@@ -1,12 +1,14 @@
 # LANGUAGE translation for advancetd for the following files:
 # res://UI/loadoutScreen/loadoutScreen.tscn
-# res://UI/settingsScreen/settingsScreen.tscn
 # res://UI/titleScreen/titleScreen.tscn
 # res://ui/gameMenuScreen/gameMenuScreen.tscn
 # res://ui/hud/hud.tscn
 # res://ui/infoScreen/infoScreen.tscn
 # res://ui/startupScreen/startup_screen.tscn
 # res://ui/titleScreen/titleScreen.tscn
+# res://ui/loseScreen/loseScreen.tscn
+# res://ui/winScreen/winScreen.tscn
+# res://ui/settingsScreen/settingsScreen.tscn
 #
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -25,15 +27,15 @@ msgstr ""
 "X-Generator: Poedit 3.8\n"
 
 #: ui/gameMenuScreen/gameMenuScreen.tscn
-msgid "Map1"
+msgid "Mission 1"
 msgstr "Mission 1"
 
 #: ui/gameMenuScreen/gameMenuScreen.tscn
-msgid "Map2"
+msgid "Mission 2"
 msgstr "Mission 2"
 
 #: ui/gameMenuScreen/gameMenuScreen.tscn
-msgid "Map3"
+msgid "Secret"
 msgstr "Mission 3"
 
 #: ui/gameMenuScreen/gameMenuScreen.tscn
@@ -46,11 +48,11 @@ msgstr "Chargement"
 
 #: ui/hud/hud.tscn
 msgid "Balance: 0$"
-msgstr "Solde : 0$"
+msgstr "Solde: 0$"
 
 #: ui/hud/hud.tscn
 msgid "Wave: 0"
-msgstr "Vague : 0"
+msgstr "Vague: 0"
 
 #: ui/hud/hud.tscn
 msgid "00:00"
@@ -70,11 +72,11 @@ msgstr "Prix"
 
 #: ui/hud/hud.tscn
 msgid "Tower Name"
-msgstr "Nom de la tour"
+msgstr "Tour"
 
 #: ui/hud/hud.tscn
 msgid "Damage: 0"
-msgstr "Dégâts : 0"
+msgstr "Dégâts: 0"
 
 #: ui/hud/hud.tscn
 msgid "Range: 0"
@@ -96,6 +98,18 @@ msgstr "Coût amélioration : 0"
 msgid "Upgrade"
 msgstr "Améliorer"
 
+#: ui/infoScreen/infoScreen.tscn
+msgid "Sean Larry Driesen & William Briand"
+msgstr "Sean Larry Driesen & William Briand"
+
+#: ui/infoScreen/infoScreen.tscn
+msgid ""
+"Controls\n"
+"\n"
+"Click to select, place.\n"
+"Scroll to zoom in/out."
+msgstr "Commandes Cliquez pour sélectionner, placer. Faites défiler pour zoomer/dézoomer."
+
 #: ui/startupScreen/startup_screen.tscn
 msgid "Game Starting..."
 msgstr "Chargement..."
@@ -111,3 +125,89 @@ msgstr "Réglages"
 #: ui/titleScreen/titleScreen.tscn
 msgid "Info"
 msgstr "Info"
+
+#: ui/loseScreen/loseScreen.tscn
+msgid "Defeat"
+msgstr "Défaite"
+
+#: ui/winScreen/winScreen.tscn
+msgid "Victory"
+msgstr "Victoire"
+
+#: ui/settingsScreen/settingsScreen.tscn
+msgid "Global Volume"
+msgstr "Volume global"
+
+#: ui/settingsScreen/settingsScreen.tscn
+msgid "Music Volume"
+msgstr "Volume musique"
+
+#: ui/settingsScreen/settingsScreen.tscn
+msgid "Gameplay Volume"
+msgstr "Volume du jeu"
+
+#: ui/settingsScreen/settingsScreen.tscn
+msgid "Français"
+msgstr "English"
+
+#: ui/loadoutScreen/loadoutScreen.tscn
+msgid "Tower Slots"
+msgstr "Tour"
+
+#: ui/loadoutScreen/loadoutScreen.tscn
+msgid "Tower"
+msgstr "Tour"
+
+#: ui/loadoutScreen/loadoutScreen.tscn
+msgid "Price"
+msgstr "Prix"
+
+#: ui/loadoutScreen/loadoutScreen.tscn
+msgid "[color=green]Terminal[/color]"
+msgstr "[color=green]Terminal[/color]"
+
+#: ui/loadoutScreen/loadoutScreen.tscn
+msgid "Balance: 0"
+msgstr "Solde: 0$"
+
+msgid "Click a tower to purchase or select. Then click a slot to equip."
+msgstr "Cliquez sur une tour pour l’acheter ou la sélectionner. Puis cliquez sur un emplacement pour l’équiper."
+
+msgid "Balance: %d£"
+msgstr "Solde : %d£"
+
+msgid "Owned"
+msgstr "Possédée"
+
+msgid "Selected %s"
+msgstr "%s sélectionnée"
+
+msgid "Not enough balance"
+msgstr "Solde insuffisant"
+
+msgid "Purchased %s"
+msgstr "%s achetée"
+
+msgid "Removed %s"
+msgstr "%s retirée"
+
+msgid "No tower selected"
+msgstr "Aucune tour sélectionnée"
+
+msgid "Tower not owned"
+msgstr "Tour non possédée"
+
+msgid "%s is already equipped"
+msgstr "%s est déjà équipée"
+
+msgid "Equipped %s"
+msgstr "%s équipée"
+
+msgid "Balance: %d$"
+msgstr "Solde : %d$"
+
+msgid "Health: %d"
+msgstr "Santé : %d"
+
+msgid "$%d"
+msgstr "%d$"

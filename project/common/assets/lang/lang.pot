@@ -1,12 +1,5 @@
 # LANGUAGE translation for advancetd for the following files:
-# res://UI/loadoutScreen/loadoutScreen.tscn
-# res://UI/settingsScreen/settingsScreen.tscn
-# res://UI/titleScreen/titleScreen.tscn
-# res://ui/gameMenuScreen/gameMenuScreen.tscn
-# res://ui/hud/hud.tscn
-# res://ui/infoScreen/infoScreen.tscn
-# res://ui/startupScreen/startup_screen.tscn
-# res://ui/titleScreen/titleScreen.tscn
+# res://ui/loadoutScreen/loadoutScreen.tscn
 #
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -18,90 +11,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: ui/gameMenuScreen/gameMenuScreen.tscn
-msgid "Map1"
+#: ui/loadoutScreen/loadoutScreen.tscn
+msgid "Tower Slots"
 msgstr ""
 
-#: ui/gameMenuScreen/gameMenuScreen.tscn
-msgid "Map2"
-msgstr ""
-
-#: ui/gameMenuScreen/gameMenuScreen.tscn
-msgid "Map3"
-msgstr ""
-
-#: ui/gameMenuScreen/gameMenuScreen.tscn
-msgid "Map4"
-msgstr ""
-
-#: ui/gameMenuScreen/gameMenuScreen.tscn
-msgid "Loadout"
-msgstr ""
-
-#: ui/hud/hud.tscn
-msgid "Balance: 0$"
-msgstr ""
-
-#: ui/hud/hud.tscn
-msgid "Wave: 0"
-msgstr ""
-
-#: ui/hud/hud.tscn
-msgid "00:00"
-msgstr ""
-
-#: ui/hud/hud.tscn
-msgid "Health: 100"
-msgstr ""
-
-#: ui/hud/hud.tscn
+#: ui/loadoutScreen/loadoutScreen.tscn
 msgid "Tower"
 msgstr ""
 
-#: ui/hud/hud.tscn
+#: ui/loadoutScreen/loadoutScreen.tscn
 msgid "Price"
 msgstr ""
 
-#: ui/hud/hud.tscn
-msgid "Tower Name"
+#: ui/loadoutScreen/loadoutScreen.tscn
+msgid "[color=green]Terminal[/color]"
 msgstr ""
 
-#: ui/hud/hud.tscn
-msgid "Damage: 0"
-msgstr ""
-
-#: ui/hud/hud.tscn
-msgid "Range: 0"
-msgstr ""
-
-#: ui/hud/hud.tscn
-msgid "Firerate: 0"
-msgstr ""
-
-#: ui/hud/hud.tscn
-msgid "Total Dmg: 0"
-msgstr ""
-
-#: ui/hud/hud.tscn
-msgid "Upgrade Cost: 0"
-msgstr ""
-
-#: ui/hud/hud.tscn
-msgid "Upgrade"
-msgstr ""
-
-#: ui/startupScreen/startup_screen.tscn
-msgid "Game Starting..."
-msgstr ""
-
-#: ui/titleScreen/titleScreen.tscn
-msgid "Play"
-msgstr ""
-
-#: ui/titleScreen/titleScreen.tscn
-msgid "Settings"
-msgstr ""
-
-#: ui/titleScreen/titleScreen.tscn
-msgid "Info"
+#: ui/loadoutScreen/loadoutScreen.tscn
+msgid "Balance: 0"
 msgstr ""

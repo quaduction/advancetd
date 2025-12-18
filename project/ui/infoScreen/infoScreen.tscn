@@ -62,10 +62,10 @@ stretch_mode = 5
 
 [node name="Label" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 420.0
-offset_top = 192.0
-offset_right = 851.0
-offset_bottom = 226.0
+offset_left = 426.0
+offset_top = 493.0
+offset_right = 857.0
+offset_bottom = 527.0
 mouse_filter = 1
 theme = ExtResource("8_5ftix")
 theme_override_fonts/normal_font = ExtResource("9_2nnod")
@@ -74,7 +74,28 @@ theme_override_fonts/bold_italics_font = ExtResource("9_2nnod")
 theme_override_fonts/italics_font = ExtResource("9_2nnod")
 theme_override_fonts/mono_font = ExtResource("9_2nnod")
 theme_override_font_sizes/normal_font_size = 25
-text = "Créé par Sean Larry Driesen & William Briand"
+text = "Sean Larry Driesen & William Briand"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 186.0
+offset_right = 861.0
+offset_bottom = 220.0
+mouse_filter = 1
+theme = ExtResource("8_5ftix")
+theme_override_fonts/normal_font = ExtResource("9_2nnod")
+theme_override_fonts/bold_font = ExtResource("9_2nnod")
+theme_override_fonts/bold_italics_font = ExtResource("9_2nnod")
+theme_override_fonts/italics_font = ExtResource("9_2nnod")
+theme_override_fonts/mono_font = ExtResource("9_2nnod")
+theme_override_font_sizes/normal_font_size = 25
+text = "Controls
+
+Click to select, place.
+Scroll to zoom in/out."
 fit_content = true
 horizontal_alignment = 1
 
