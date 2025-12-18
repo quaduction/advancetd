@@ -12,12 +12,11 @@ var stats: Dictionary;
 
 var currentTarget = null;
 
-
 func _ready() -> void:
 	if towerTypeId: setType(towerTypeId);
 
 	# Starts off not opaque for placement
-	$Sprite2D.modulate.a = 0.6;
+	$AnimatedSprite2D.modulate.a = 0.6;
 
 func _process(_delta):
 	if not deployed:
@@ -52,7 +51,7 @@ func place():
 	if deployed: return ;
 
 	deployed = true;
-	$Sprite2D.modulate.a = 1;
+	$AnimatedSprite2D.modulate.a = 1;
 	_highlightCollider("placed");
 
 func try_get_closest_target():

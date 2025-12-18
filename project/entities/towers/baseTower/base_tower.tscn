@@ -1,12 +1,39 @@
-[gd_scene load_steps=6 format=3 uid="uid://h0nbm0lauiyu"]
+[gd_scene load_steps=9 format=3 uid="uid://h0nbm0lauiyu"]
 
 [ext_resource type="Script" uid="uid://bdgxpmqar0y5a" path="res://entities/towers/baseTower/base_tower.gd" id="1_b5ahg"]
-[ext_resource type="Texture2D" uid="uid://dwd20we6ntrhw" path="res://common/assets/textures/sprites/towers/soldier.tres" id="2_b5ahg"]
 [ext_resource type="Script" uid="uid://iwyhn4fsmdia" path="res://entities/towers/baseTower/collision_area.gd" id="2_rvph5"]
+[ext_resource type="Texture2D" uid="uid://b6vkjn1xxjxy3" path="res://common/assets/textures/sprites/towers/towers.png" id="3_rvph5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dr3l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n6an5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q03rk"]
+atlas = ExtResource("3_rvph5")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qssy"]
+atlas = ExtResource("3_rvph5")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wrjw5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q03rk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qssy")
+}],
+"loop": true,
+"name": &"firing",
+"speed": 5.0
+}]
 
 [node name="BaseTower" type="Node2D"]
 script = ExtResource("1_b5ahg")
@@ -44,7 +71,7 @@ shape = SubResource("CircleShape2D_n6an5")
 [node name="CooldownTimer" type="Timer" parent="."]
 autostart = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_b5ahg")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wrjw5")
 
 [connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timeout"]

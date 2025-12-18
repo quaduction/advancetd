@@ -4,4 +4,4 @@
 
 [node name="Data" type="Node"]
 script = ExtResource("1_18x81")
-credits = 500
+credits = 200

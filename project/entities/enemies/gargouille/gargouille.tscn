@@ -4,7 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cqoirerhq0ujw" path="res://common/assets/textures/sprites/enemies/enemy2.tres" id="2_1l1o3"]
 
 [node name="BaseEnemy" instance=ExtResource("1_4ebsl")]
-speed = 0.2
+hp = 65.0
+speed = 0.3
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_1l1o3")

@@ -10,8 +10,11 @@ func _on_map_2_pressed() -> void:
 
 
 func _on_map_3_pressed() -> void:
-	Game.main.enterLevel("debugLevel");
+	Game.main.enterLevel("level3");
 
 
 func _on_map_4_pressed() -> void:
-	pass # Replace with function body.
+	Game.main.enterLevel("level4");
+
+func _on_map_5_pressed() -> void:
+	Game.main.enterLevel("debugLevel");

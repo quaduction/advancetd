@@ -4,14 +4,14 @@
       "id": "scout",
       "name": "Scout",
       "display_scale": 3,
-      "credit_price": 80,
+      "credit_price": 90,
       "cash_price": 100,
       "size": 2,
       "levels": [
         {
           "range": 20,
           "damage": 4,
-          "firerate": 0.8,
+          "firerate": 0.65,
           "upgrade_price": 200
         }
       ]
@@ -25,9 +25,9 @@
       "size": 2,
       "levels": [
         {
-          "range": 20,
-          "damage": 3,
-          "firerate": 0.3,
+          "range": 50,
+          "damage": 2,
+          "firerate": 2,
           "upgrade_price": 800
         }
       ]
@@ -37,13 +37,13 @@
       "name": "Sentry",
       "display_scale": 3,
       "credit_price": 120,
-      "cash_price": 800,
+      "cash_price": 700,
       "size": 2,
       "levels": [
         {
           "range": 30,
-          "damage": 10,
-          "firerate": 5,
+          "damage": 5,
+          "firerate": 10,
           "upgrade_price": 2000
         }
       ]
@@ -53,13 +53,13 @@
       "name": "Turret",
       "display_scale": 2.5,
       "credit_price": 400,
-      "cash_price": 2200,
+      "cash_price": 2000,
       "size": 4,
       "levels": [
         {
-          "damage": 40,
-          "firerate": 7,
-          "range": 50,
+          "damage": 50,
+          "firerate": 1,
+          "range": 100,
           "upgrade_price": 4000
         }
       ]

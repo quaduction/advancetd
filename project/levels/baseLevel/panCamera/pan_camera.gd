@@ -2,7 +2,7 @@ extends Camera2D;
 
 @export var zoom_speed := 0.1;
 @export var min_zoom := Vector2.ONE;
-@export var max_zoom := Vector2(2.0, 2.0);
+@export var max_zoom := Vector2(5.0, 5.0);
 
 var zoom_level := Vector2.ONE;
 var is_panning := false;
